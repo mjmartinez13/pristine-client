@@ -1,0 +1,67 @@
+#about-header {
+  height: 45vh;
+
+
+  p {
+    font-size: 120%;
+    font-weight: 200;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    text-align: right;
+    font-weight: 400;
+    font-size: 100%;
+  }
+}
+
+#about-content {
+  height: 45vh;
+
+  img {
+    width: 400px;
+  }
+
+  p {
+    color: #555;
+    font-size: 120%;
+    word-spacing: 2px;
+    line-height: 25px;
+    font-weight: 300;
+  }
+}
+
+.left-side {
+  background-image: -webkit-linear-gradient(rgba(57,66,75, .5), rgba(57,66,75, .5)), url('../../assets/img/about.jpg');
+  color: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-side {
+  height: 45vh;
+}
+
+.second-right-side {
+  background-image: -webkit-linear-gradient(rgba(57,66,75, .9), rgba(57,66,75, .9)), url('../../assets/img/hero-section.jpg');
+  color: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.second-left-side {
+  height: 45vh;
+  p {
+    padding: 0 10%;
+    text-align: justify;
+  }
+}

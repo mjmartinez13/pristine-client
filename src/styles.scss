@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 300%;
+  font-weight: 400;
+}
+
+.visible {
+  opacity: 1;
+}

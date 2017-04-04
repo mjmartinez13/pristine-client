@@ -1,0 +1,130 @@
+
+
+nav {
+  img {
+    width: 270px;
+    margin-top: 12px;
+  }
+  a {
+    color: #555;
+  }
+
+  .btn {
+    color: #fff;
+  }
+}
+
+
+footer {
+  text-align: center;
+  background: #32373c;
+  color: #fff;
+  padding: 60px 0;
+
+  h3 {
+    font-size: 100%;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  a {
+    display: block;
+    color: #fff;
+    font-size: 100%;
+    font-weight: 100;
+    color: #acaeb0;
+    margin-bottom: 10px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+  p {
+    margin-bottom: 10px;
+    color: #acaeb0;
+    font-weight: 100;
+  }
+  .content-footer {
+    text-align: left;
+    padding-left: 8%;
+  }
+  .social {
+    display: inline-block;
+    font-size: 180%;
+
+    i {
+      margin: 0 30%;
+    }
+  }
+}
+
+
+#login-modal {
+  width: 30%;
+
+  a {
+    display: block;
+    i {
+      font-size: 250%;
+      padding: 10px 20px 0 0;
+    }
+  }
+  .create-account{
+    display: inline-block;
+  }
+  .modal-content {
+    padding: 0 7%;
+    padding-bottom: 20px;
+  }
+  button {
+    margin-bottom: 20px;
+  }
+  .row {
+    margin-bottom: 0;
+  }
+  p {
+    display: inline-block;
+  }
+
+  h4 {
+    font-weight: 600;
+    color: #555;
+  }
+  i {
+    color: #555;
+  }
+}
+
+
+#signup-modal {
+  width: 40%;
+
+  a {
+    display: block;
+    i {
+      font-size: 250%;
+      padding: 10px 20px 0 0;
+    }
+  }
+  .row {
+    margin-bottom: 0;
+  }
+  .modal-content {
+    padding-top: 0;
+  }
+  i {
+    color: #555;
+  }
+
+  h4 {
+    color: #555;
+    font-weight: 600;
+  }
+}
+
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
