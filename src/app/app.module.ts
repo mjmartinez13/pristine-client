@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutComponent } from './about/about.component';
 import { JointComponent } from './joint/joint.component';
+import { RepairComponent } from './repair/repair.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     AboutComponent,
-    JointComponent
+    JointComponent,
+    RepairComponent
   ],
   imports: [
     BrowserModule,

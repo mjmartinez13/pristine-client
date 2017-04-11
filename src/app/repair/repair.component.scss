@@ -1,0 +1,57 @@
+.valign {
+  width: 100%;
+}
+
+
+#progress-bar {
+  height: 30vh;
+
+  .line {
+    position: absolute;
+    width: 50%;
+    top: 16.8%;
+    left: 25%;
+    margin: auto;
+    height: 2px;
+    background-color: #ddd;
+    z-index: -1;
+  }
+  p {
+    display: inline-block;
+    background-color: #fff;
+    border: 3px solid #ddd;
+    padding: 10px 17px;
+    border-radius: 50%;
+    color: #ddd;
+    z-index: 1;
+  }
+  h5 {
+    color: #555;
+  }
+  .active {
+    background: #7cb342;
+    border: 3px solid #7cb342;
+    color: #fff;
+  }
+}
+
+.progress {
+  height: 7px;
+  background-color: #dedede;
+
+  .determinate {
+    background-color: #7cb342;
+  }
+}
+
+#repair-header {
+  h2 {
+    font-size: 200%;
+    color: #555;
+  }
+  hr {
+    margin-bottom: 20px;
+    border: 1px solid #dedede;
+  }
+
+}

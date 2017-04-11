@@ -66,7 +66,7 @@
 #feature-section {
   height: 75vh;
   .overlay  {
-    background-color: rgba(57,66,75, .5);
+    background-color: rgba(57,66,75, .7);
     height: 100%;
     width: 100%;
     padding: 60px 0;
@@ -74,7 +74,7 @@
   p {
     color: #fff;
     font-size: 150%;
-    font-weight: 200;
+    font-weight: 300;
     text-align: justify;
     margin-bottom: 40px;
     i {
@@ -82,7 +82,7 @@
     }
   }
   h2 {
-    color:  #ccc;
+    color:  #fff;
     margin: 0;
 
     span {
@@ -102,7 +102,7 @@
     color: #fff;
     border-radius: 3px;
     font-size: 120%;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 150%;
     padding-bottom: 2px;
     margin-bottom: 10px;

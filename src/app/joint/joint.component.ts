@@ -13,7 +13,13 @@ export class JointComponent implements OnInit {
   ngOnInit() {
 
     $('.parallax').parallax();
+
     $('select').material_select();
+
+    $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 15
+  });
 
     setTimeout(()=> {
       $('.valign').addClass('animated fadeIn');
@@ -24,6 +30,24 @@ export class JointComponent implements OnInit {
     }, 1000);
 
 
+    $(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+  }
+
+  apply() {
+    $('#apply-section').show(100);
   }
 
 }
