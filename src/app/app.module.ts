@@ -11,6 +11,12 @@ import { AboutComponent } from './about/about.component';
 import { JointComponent } from './joint/joint.component';
 import { RepairComponent } from './repair/repair.component';
 
+
+//-----------------Services ---------------------------------
+import { ApplicantService } from './services/applicant-service/applicant.service';
+import { DeviceService } from './services/device-service/device.service';
+import { RepairDetailService } from './services/repair-detail-service/repair-detail.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +31,11 @@ import { RepairComponent } from './repair/repair.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ApplicantService,
+    DeviceService,
+    RepairDetailService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

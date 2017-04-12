@@ -4,11 +4,11 @@
 
 
 #progress-bar {
-  height: 30vh;
+  height: 32vh;
 
   .line {
     position: absolute;
-    width: 50%;
+    width: 49%;
     top: 16.8%;
     left: 25%;
     margin: auto;
@@ -54,4 +54,181 @@
     border: 1px solid #dedede;
   }
 
+}
+
+button {
+  margin: 0, auto;
+  width: 150px;
+  float: left;
+  padding: 15px;
+  margin: 15px;
+  color: white;
+  background-color: #337AB7;
+  border-radius: 7px;
+}
+
+.gold {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+.silver {
+  background-color: var(--silver);
+  color: var(--black);
+}
+
+.rose-gold {
+  background-color: var(--rose-gold);
+  color: var(--black);
+}
+
+.black {
+  background-color: var(--black);
+  color: #fff;
+}
+
+.jet-black{
+  background-color: var(--jet-black);
+  color: #fff;
+}
+
+.space-gray {
+  background-color: var(--space-gray);
+  color: #fff;
+}
+
+.white{
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.blue{
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+.green{
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.pink{
+  background-color: var(--pink);
+  color: var(--black);
+}
+
+.yellow{
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.location-form{
+  margin: 30px auto;
+  width: 25%;
+  float: left;
+}
+
+.location-form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.location-form input,
+.location-form button {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+}
+
+.location-form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+.location-form button:hover {
+  background: #5CB85C;
+  color: #fff;
+  transition: .3s ease background;
+}
+
+.contact-form{
+  margin: 30px auto;
+  width: 50%;
+  float: right;
+}
+
+.contact-form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form button {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+}
+
+.contact-form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background: #5CB85C;
+  color: #fff;
+  transition: .3s ease background;
+}
+
+
+
+/*.location-form {
+  margin-left: 20%;
+  float: left;
+}*/
+
+/*.contact-form {
+  margin-right: 20%;
+  float: right;
+}*/
+
+.submit-request-button {
+  font-size: 20px;
+  width: 100%;
+  float:left;
+  clear: both;
+  margin-top: 25px;
+  margin-left: 0;
 }

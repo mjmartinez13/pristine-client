@@ -4,16 +4,30 @@
       <div class="line"></div>
       <div class="row">
         <div class="col s4 center-align">
-          <p class="active">1</p>
+          <p id="step-1" class="active">1</p>
           <h5>Your Device</h5>
+          <div>
+            <strong><span id="request-info">{{ deviceName }} </span></strong>
+            <strong><span id="request-info">{{ model }}</span></strong>
+            <strong><span id="request-info">{{ color }} </span></strong>
+
+          </div>
         </div>
         <div class="col s4 center-align">
-          <p>2</p>
+          <p id="step-2">2</p>
           <h5>Issue</h5>
+          <div>
+            <strong><span id="request-info">{{ repairType }} </span></strong>
+            Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
+
+          </div>
         </div>
         <div class="col s4 center-align">
-          <p>3</p>
+          <p id="step-3">3</p>
           <h5>Tell Us When</h5>
+          <div>
+            <strong><span id="request-info">{{ requestedDate | date : "MMM d," }} {{ requestedTime }} </span></strong>
+          </div>
         </div>
       </div>
       <div class="progress">
@@ -26,8 +40,189 @@
 
 <section id="repair-header">
   <div class="container">
-    <h2 class="center-align">Selecting your device that needs repairing</h2>
-    <hr>
+
+    <div *ngIf="selectModelBoolean">
+      <h2 class="center-align">Select Your Device</h2>
+      <hr>
+
+      <div class="row">
+        <div class="col s2">
+
+        </div>
+        <div id="selection-list" class="col s8 center-align">
+          <div *ngFor="let oneDevice of devices">
+            <button (click)="getColors(oneDevice._id, oneDevice.model)"> {{ oneDevice.model }} </button>
+          </div>
+        </div>
+        <div class="col s2">
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectColorBoolean">
+      <h2 class="center-align">Select Your Color </h2>
+      <hr>
+      <div class="row">
+        <div class="col s2">
+
+        </div>
+        <div class="col s8 center-align">
+          <div class="selection-list" *ngFor="let oneColor of colors">
+            <button *ngIf="oneColor === 'Gold'" class="gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Silver'" class="silver" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Rose Gold'" class="rose-gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Black'" class="black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Jet Black'" class="jet-black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Space Gray'" class="space-gray" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'White'" class="white" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Blue'" class="blue" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Green'" class="green" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Pink'" class="pink" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            <button *ngIf="oneColor === 'Yellow'" class="yellow" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+          </div>
+        </div>
+        <div class="col s2">
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectRepairBoolean">
+        <h2 class="center-align"> Select Your Repair </h2>
+        <hr>
+        <div class="row">
+        <div class="col s2">
+
+        </div>
+        <div class="col s8 center-align">
+          <div class="selection-list" *ngFor="let oneRepairType of repairTypes; let i=index">
+            <button class="repair-item" data-index="i" (click)="selectDate(oneRepairType, i)"> {{oneRepairType}}</button>
+          </div>
+          <div>
+            <span *ngFor="let oneCost of repairCosts.repairCost"> {{oneCost}</span>
+          </div>
+        </div>
+        <div class="col s2">
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectDateBoolean">
+      <h2 class="center-align"> Select Repair Date </h2>
+      <hr>
+      <div class="row">
+        <div class="col s2">
+
+        </div>
+        <div class="col s8 center-align">
+          <div class="selection-list" *ngFor="let oneDate of availableDays">
+            <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
+            <button (click)="selectTime(oneDate)"> {{oneDate | date : "EEEE MMM d"}} </button>
+          </div>
+        </div>
+        <div class="col s2">
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectTimeBoolean">
+      <h2 class="center-align"> Select a Time </h2>
+      <hr>
+      <div class="row">
+        <div class="col s2">
+
+        </div>
+        <div class="col s8 center-align">
+          <div class="selection-list" *ngFor="let oneTime of availableTimes">
+
+            <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
+
+          </div> -->
+            <button (click)="provideLocAndCon(oneTime)"> {{oneTime}} </button>
+          </div>
+        </div>
+        <div class="col s2">
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="locationAndContactBoolean">
+      <div class="row">
+        <div class="col s2">
+
+        </div>
+        <div class="col s8 center-align">
+          <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
+          <div class="location-form">
+            <h2>Location </h2>
+            <div>
+              <!-- <select>
+                <option *ngFor="let county of counties" value= {{county}}>
+                  {{county}}
+                </option>
+              </select> -->
+
+              <!-- <select *ngIf="ng-county === 'Broward'">
+                <option *ngFor="let area of browardAreas" value= {{area}} [(ngModel)]="area">
+                  {{area}}
+                </option>
+              </select>
+
+              <select *ngIf="ng-county === 'Miami-Dade'">
+                <option *ngFor="let area of miamiAreas" value= {{area}} [(ngModel)]="area">
+                  {{area}}
+                </option>
+              </select> -->
+
+
+              <label for="county">County <span class="required">*</span></label>
+              <input type="dropdown" name="county" [(ngModel)]="county" required />
+            </div>
+            <div>
+              <label for="area">Area <span class="required">*</span></label>
+              <input type="dropdown" name="area" [(ngModel)]="area" required />
+            </div>
+
+          </div>
+          <div class="contact-form">
+            <h2>Contact Info</h2>
+            <div>
+              <label for="name">Name <span class="required">*</span></label>
+              <input type="text" name="name" [(ngModel)]="name" required />
+            </div>
+            <div>
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="text" name="email" [(ngModel)]="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone <span class="required">*</span></label>
+              <input type="text" name="phone" [(ngModel)]="phone" required />
+            </div>
+          </div>
+          <button class="submit-request-button" type="submit"> Confirm Location and Contact Info </button>
+        </form>
+        </div>
+        <div class="col s3">
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="verificationBoolean">
+      <div class="row">
+        <div class="col s12">
+          <h1 class="center-align"> Thank You For Your Request </h1>
+          <h3 class="center-align"> Your details were sent successfully! A Pristine Specialist will get back to you shortly</h3>
+        </div>
+      </div>
+    </div>
+
+
+
 
   </div>
 </section>
