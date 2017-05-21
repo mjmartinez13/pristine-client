@@ -16,7 +16,7 @@ import { RepairComponent } from './repair/repair.component';
 import { ApplicantService } from './services/applicant-service/applicant.service';
 import { DeviceService } from './services/device-service/device.service';
 import { RepairDetailService } from './services/repair-detail-service/repair-detail.service';
-
+import { MomentModule } from 'angular2-moment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { RepairDetailService } from './services/repair-detail-service/repair-det
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MomentModule
   ],
   providers: [
     ApplicantService,

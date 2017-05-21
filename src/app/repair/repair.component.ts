@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService } from '../services/device-service/device.service';
 import { RepairDetailService } from '../services/repair-detail-service/repair-detail.service';
-
+import { Router } from '@angular/router';
+import { MomentModule } from 'angular2-moment';
+import * as moment from 'moment';
 
 declare var jQuery: any;
 declare var $: any;
+
+
 
 @Component({
   selector: 'app-repair',
@@ -29,15 +33,15 @@ export class RepairComponent implements OnInit {
   locationAndContactBoolean: boolean = false;
   verificationBoolean: boolean = false;
 
-  currentDate: Date = new Date();
+  currentDate: Date = moment().toDate();
 
   day1: Date = this.currentDate;
-  day2: Date = this.currentDate;
-  day3: Date = this.currentDate;
-  day4: Date = this.currentDate;
-  day5: Date = this.currentDate;
-  day6: Date = this.currentDate;
-  day7: Date = this.currentDate;
+  day2: Date = moment().add(1,'days').toDate();
+  day3: Date = moment().add(2,'days').toDate();
+  day4: Date = moment().add(3,'days').toDate();
+  day5: Date = moment().add(4,'days').toDate();
+  day6: Date = moment().add(5,'days').toDate();
+  day7: Date = moment().add(6,'days').toDate();
 
   availableDays: Array<Date> = [
     this.day1,
@@ -50,18 +54,18 @@ export class RepairComponent implements OnInit {
   ];
 
   availableTimes : Array<String> = [
-    "8-9am",
-    "9-10am",
-    "10-11am",
-    "11-12pm",
-    "12-1pm",
-    "1-2pm",
-    "2-3pm",
-    "3-4pm",
-    "4-5pm",
-    "5-6pm",
-    "6-7pm",
-    "7-8pm"
+    "8-9 am",
+    "9-10 am",
+    "10-11 am",
+    "11-12 pm",
+    "12-1 pm",
+    "1-2 pm",
+    "2-3 pm",
+    "3-4 pm",
+    "4-5 pm",
+    "5-6 pm",
+    "6-7 pm",
+    "7-8 pm"
   ];
 
   //Variables to hold repair query results.
@@ -97,6 +101,7 @@ export class RepairComponent implements OnInit {
 ) { }
 
   ngOnInit() {
+
 
     this.selectModelBoolean = true;
 
