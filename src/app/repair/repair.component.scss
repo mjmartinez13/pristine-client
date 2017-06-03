@@ -232,3 +232,34 @@ button {
   margin-top: 25px;
   margin-left: 0;
 }
+
+.img-wrapper {
+  margin: auto 0;
+}
+#confirmation-info {
+  hr {
+    width: 80%;
+  }
+
+  span {
+    font-weight: bold;
+  }
+  p {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  div {padding-bottom: 30px;}
+}
+
+#next-steps {
+  div {
+    padding: 30px;
+  }
+  li {
+    list-style-type: disc;
+    margin: 10px 0;
+  }
+  hr {
+    width: 100%;
+  }
+}

@@ -128,7 +128,7 @@
           </div> -->
 
           <div class="selection-list" *ngFor="let oneDate of availableDays">
-            <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button>
+            <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
             <button (click)="selectTime(oneDate)"> {{oneDate | date : "EEEE MMM d"}} </button>
           </div>
         </div>
@@ -222,98 +222,113 @@
       </div>
     </div>
 
-    <div *ngIf="verificationBoolean">
-      <div class="row">
-        <div class="col s12">
-          <h1 class="center-align"> Thank You For Your Request </h1>
-          <h3 class="center-align"> Your details were sent successfully! A Pristine Specialist will get back to you shortly</h3>
+    <section>
 
-          <h2 class="center-align">Your repair request was registered on {{ currentDate | date : "MMM d, yyyy hh:mm"}}</h2>
-          <div class="row">
-            <div class="col s7">
-              <div class="row">
-                <div class="col s3">
-                  Device:
-                </div>
-                <div class="col s9">
-                  {{ device }} {{ model }}, {{ color }}
-                </div>
-                <hr />
-              </div>
-              <div class="row">
-                <div class="col s3">
-                  Issue:
-                </div>
-                <div class="col s9">
-                  {{ repairType }}
-                </div>
-                <hr />
-              </div>
-              <div class="row">
-                <div class="col s3">
-                  Cost:
-                </div>
-                <div class="col s9">
-                  ${{ repairCost }}
-                </div>
-                <hr />
-              </div>
-              <div class="row">
-                <div class="col s3">
-                  Expect us at:
-                </div>
-                <div class="col s9">
-                  {{ requestedTime }}
-                </div>
-                <hr />
-              </div>
-              <div class="row">
-                <div class="col s3">
-                  Your info:
-                </div>
-                <div class="col s9">
-                  <p>
-                    {{ name }}
-                  </p>
-                  <p>
-                    {{ county }}, {{ area }}
-                  </p>
-                  <p>
-                    {{ email }}
-                  </p>
-                  <p>
-                    {{ phone }}
-                  </p>
+      <div *ngIf="verificationBoolean">
+        <div class="row">
+          <div id="confirmation-info" class="col s12">
 
-                </div>
+            <div>
+              <h2 class="center-align"> Thank You For Your Request </h2>
+              <h2 class="center-align">Your repair request was registered on {{ currentDate | date : "MMM d, yyyy hh:mm"}}</h2>
+
+              <div class="center-align">
+                <img src="../assets/img/city.png" />
               </div>
             </div>
-            <div class="col s5">
-              <h4 class="center-align">What happens next?</h4>
-              <ul>
-                <li>
-                  A local Pristine Specialist will be assigned to you repair
-                  and you will receive a email confirmation as well as a text
-                  update to the number you have provided.
-                </li>
-                <li>
-                  A Pristine Specialist will repair your device at the time
-                  and location you requested.
-                </li>
-                <li>
-                  Payment will be collected via one of our approved payment
-                  methods upon completion of the repair.
-                </li>
-              </ul>
-              <hr />
-              <h4 class="center-align">Any qustions or concerns?</h4>
-              <h4 class="center-align"> (954) 633-5010</h4>
-              <h4 class="center-align">Email Us: pristine.wireless@gmail.com</h4>
+            <div class="row">
+              <div class="col s7">
+                <div class="row">
+                  <div class="col s3">
+                    Device:
+                  </div>
+                  <div class="col s9">
+                    <span> {{ device }} {{ model }}, {{ color }} </span>
+                  </div>
+                  <hr />
+                </div>
+                <div class="row">
+                  <div class="col s3">
+                    Issue:
+                  </div>
+                  <div class="col s9">
+                    <span> {{ repairType }} </span>
+                    <span *ngIf="repairType === 'Screen'"> (Tempered Glass Screen Protector Included)</span>
+                  </div>
+                  <hr />
+                </div>
+                <div class="row">
+                  <div class="col s3">
+                    Cost:
+                    <br />
+                  </div>
+                  <div class="col s9">
+                    <span> ${{ repairCost }} </span>
+                    <br />
+                    (Pay for repair once completed)
+                  </div>
+                  <hr />
+                </div>
+                <div class="row">
+                  <div class="col s3">
+                    Expect us at:
+                  </div>
+                  <div class="col s9">
+                    <span> {{ requestedTime }} </span>
+                  </div>
+                  <hr />
+                </div>
+                <div class="row">
+                  <div class="col s3">
+                    Your info:
+                  </div>
+                  <div class="col s9">
+                    <p>
+                      {{ name }}
+                    </p>
+                    <p>
+                      {{ county }}, {{ area }}
+                    </p>
+                    <p>
+                      {{ email }}
+                    </p>
+                    <p>
+                      {{ phone }}
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+              <div id="next-steps" class="col s5">
+                <h2 class="center-align">What happens next?</h2>
+                <div>
+                  <ul>
+                    <li>
+                      A local Pristine Specialist will be assigned to you repair
+                      and you will receive a email confirmation as well as a text
+                      update to the number you have provided.
+                    </li>
+                    <li>
+                      A Pristine Specialist will repair your device at the time
+                      and location you requested.
+                    </li>
+                    <li>
+                      Payment will be collected via one of our approved payment
+                      methods upon completion of the repair.
+                    </li>
+                  </ul>
+
+                </div>
+                <hr />
+                <h2 class="center-align">Any questions or concerns?</h2>
+                <h2 class="center-align"> (954) 633-5010</h2>
+                <h2 class="center-align">Email Us: pristine.wireless@gmail.com</h2>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
 
 
