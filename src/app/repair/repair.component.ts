@@ -24,6 +24,8 @@ export class RepairComponent implements OnInit {
   errorMessage: String = '';
 
   //Booleans
+
+  requestBarBoolean: boolean = true;
   enterNameBoolean: boolean = false;
   selectModelBoolean: boolean = false;
   selectColorBoolean: boolean = false;
@@ -49,8 +51,8 @@ export class RepairComponent implements OnInit {
     this.day3,
     this.day4,
     this.day5,
-    this.day6,
-    this.day7
+    // this.day6,
+    // this.day7
   ];
 
   availableTimes : Array<String> = [
@@ -246,6 +248,7 @@ export class RepairComponent implements OnInit {
     $(".determinate").css("width", "100%");
 
     this.locationAndContactBoolean = false;
+    this.requestBarBoolean = false;
     this.verificationBoolean = true;
 
     this.firstName = enteredFirstName;

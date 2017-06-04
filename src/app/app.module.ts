@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AboutComponent } from './about/about.component';
 import { JointComponent } from './joint/joint.component';
 import { RepairComponent } from './repair/repair.component';
+import { PricingComponent } from './pricing/pricing.component';
 
 
 //-----------------Services ---------------------------------
@@ -23,7 +24,8 @@ import { MomentModule } from 'angular2-moment';
     HomePageComponent,
     AboutComponent,
     JointComponent,
-    RepairComponent
+    RepairComponent,
+    PricingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="requestBarBoolean">
   <div class="valign-wrapper" id="progress-bar">
     <div class="valign">
       <div class="line"></div>
@@ -41,7 +41,7 @@
 <section id="repair-header">
   <div class="container">
 
-    <div *ngIf="selectModelBoolean">
+    <div id="select-device-container" *ngIf="selectModelBoolean">
       <h2 class="center-align">Select Your Device</h2>
       <hr>
 
@@ -49,9 +49,13 @@
         <div class="col s2">
 
         </div>
-        <div id="selection-list" class="col s8 center-align">
-          <div *ngFor="let oneDevice of devices">
-            <button (click)="getColors(oneDevice._id, oneDevice.model)"> {{ oneDevice.model }} </button>
+        <div class="col s8 center-align">
+          <div class="select-device" *ngFor="let oneDevice of devices">
+            <div (click)="getColors(oneDevice._id, oneDevice.model)">
+              <img src="../assets/img/repair.jpg" />
+              <br />
+              <span> {{ oneDevice.model }} </span>
+            </div>
           </div>
         </div>
         <div class="col s2">
@@ -60,14 +64,14 @@
       </div>
     </div>
 
-    <div *ngIf="selectColorBoolean">
+    <div id="select-color-container" *ngIf="selectColorBoolean">
       <h2 class="center-align">Select Your Color </h2>
       <hr>
-      <div class="row">
+      <div class="row center-align">
         <div class="col s2">
 
         </div>
-        <div class="col s8 center-align">
+        <div class="col s8">
           <div class="selection-list" *ngFor="let oneColor of colors">
             <button *ngIf="oneColor === 'Gold'" class="gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
             <button *ngIf="oneColor === 'Silver'" class="silver" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
@@ -88,7 +92,7 @@
       </div>
     </div>
 
-    <div *ngIf="selectRepairBoolean">
+    <div id="select-repair-container" *ngIf="selectRepairBoolean">
         <h2 class="center-align"> Select Your Repair </h2>
         <hr>
         <div class="row">
@@ -97,7 +101,9 @@
         </div>
         <div class="col s8 center-align">
           <div class="selection-list" *ngFor="let oneRepairType of repairTypes; let i=index">
-            <button class="repair-item" data-index="i" (click)="selectDate(oneRepairType, i)"> {{oneRepairType}}</button>
+            <button class="repair-item center-align" data-index="i" (click)="selectDate(oneRepairType, i)">
+               <span> {{oneRepairType}} </span>
+             </button>
           </div>
           <div>
             <!-- <span *ngFor="let oneCost of repairCosts.repairCost"> {{oneCost}</span> -->
@@ -109,7 +115,7 @@
       </div>
     </div>
 
-    <div *ngIf="selectDateBoolean">
+    <div id="select-date-container" *ngIf="selectDateBoolean">
       <h2 class="center-align"> Select Repair Date </h2>
       <hr>
       <div class="row">
@@ -117,19 +123,14 @@
 
         </div>
         <div class="col s8 center-align">
-          <!-- <div class="selection-list">
-            <button (click)="selectTime(oneDate)"> {{currentDate | amDateFormat: 'YYYY-MM-DD'}} </button>
-            <button (click)="selectTime(oneDate)"> {{currentDate | amAdd: 1 : 'days' | amDateFormat: 'YYYY-MM-DD'}} </button>
-            <button (click)="selectTime(oneDate)"> {{currentDate | amAdd: 2 : 'days' | amDateFormat: 'YYYY-MM-DD'}} </button>
-            <button (click)="selectTime(oneDate)"> {{currentDate | amAdd: 3 : 'days' | amDateFormat: 'YYYY-MM-DD'}} </button>
-            <button (click)="selectTime(oneDate)"> {{currentDate | amAdd: 4 : 'days' | amDateFormat: 'YYYY-MM-DD'}} </button>
-            <button (click)="selectTime(oneDate)"> {{currentDate | amAdd: 5 : 'days' | amDateFormat: 'YYYY-MM-DD'}} </button>
-            <button (click)="selectTime(oneDate)"> {{currentDate | amAdd: 6 : 'days' | amDateFormat: 'YYYY-MM-DD'}} </button>
-          </div> -->
 
           <div class="selection-list" *ngFor="let oneDate of availableDays">
             <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
-            <button (click)="selectTime(oneDate)"> {{oneDate | date : "EEEE MMM d"}} </button>
+            <button (click)="selectTime(oneDate)">
+              {{oneDate | date : "EEEE"}}
+              <br />
+              {{oneDate | date : "MMM d"}}
+            </button>
           </div>
         </div>
         <div class="col s2">
@@ -138,7 +139,7 @@
       </div>
     </div>
 
-    <div *ngIf="selectTimeBoolean">
+    <div id="select-time-container" *ngIf="selectTimeBoolean">
       <h2 class="center-align"> Select a Time </h2>
       <hr>
       <div class="row">
@@ -151,7 +152,9 @@
             <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
 
           </div> -->
-            <button (click)="provideLocAndCon(oneTime)"> {{oneTime}} </button>
+            <button (click)="provideLocAndCon(oneTime)">
+              <span> {{oneTime}} </span>
+            </button>
           </div>
         </div>
         <div class="col s2">
@@ -229,7 +232,7 @@
           <div id="confirmation-info" class="col s12">
 
             <div>
-              <h2 class="center-align"> Thank You For Your Request </h2>
+              <h2 class="center-align"> Thank for your request. </h2>
               <h2 class="center-align">Your repair request was registered on {{ currentDate | date : "MMM d, yyyy hh:mm"}}</h2>
 
               <div class="center-align">

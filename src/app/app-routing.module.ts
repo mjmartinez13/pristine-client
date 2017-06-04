@@ -10,6 +10,7 @@ import { JointComponent } from './joint/joint.component';
 
 import { RepairComponent } from './repair/repair.component';
 
+import { PricingComponent } from './pricing/pricing.component'
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'repair',
     component: RepairComponent
+  },
+  {
+    path: 'pricing',
+    component: PricingComponent
   }
 
 ];
