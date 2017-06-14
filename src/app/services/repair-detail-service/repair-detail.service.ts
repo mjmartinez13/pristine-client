@@ -6,10 +6,10 @@ import 'rxjs/add/operator/toPromise';
 export class RepairDetailService {
 
   constructor(private myHttp: Http) { }
-  //------------ FOR DEVELOPMENT (UNCOMMENT) --------------------
 
-  BASE_URL: string = 'http://localhost:3000';
-  // BASE_URL: string = '';
+  //------------ FOR DEVELOPMENT (UNCOMMENT) --------------------
+  // BASE_URL: string = 'http://localhost:3000';
+  BASE_URL: string = '';
 
   sendDetails(requestInfo){
     const headers = new Headers({'Content-Type': "application/json"});
