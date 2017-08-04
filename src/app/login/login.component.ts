@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from './services/session-service/session.service';
-declare var jQuery: any;
-declare var $: any;
 
+import { SessionService } from '../services/session-service/session.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-
-
-export class AppComponent {
+export class LoginComponent implements OnInit {
 
   newTechInfo = {};
-  loginInfo ={};
+  loginInfo = {};
 
   user: any;
   error: string;
@@ -22,17 +18,7 @@ export class AppComponent {
 
   constructor(private mySessionService: SessionService) { }
 
-
   ngOnInit() {
-    $(".button-collapse").sideNav();
-
-    $('#login-modal').modal();
-    $('#signup-modal').modal();
-
-    $('.create-account').click(function() {
-      $('#login-modal').modal('close');
-    });
-
     this.mySessionService.isLoggedIn()
     .then(userInfo => this.user = userInfo);
   }

@@ -77,18 +77,18 @@
   <h4 class="center-align">Log In</h4>
   <div class="row">
         <div class="row">
-          <form class="col s12">
+          <form (ngSubmit)="login()" #myForm="ngForm" class="col s12">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
+                <input id="username" type="email" [(ngModel)]="loginInfo.username" [ngModelOptions]="{standalone: true}" class="validate">
+                <label for="username">Email</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">lock</i>
-                <input id="password" type="password" class="validate">
+                <input id="password" type="password" [(ngModel)]="loginInfo.password" [ngModelOptions]="{standalone: true}" class="validate">
                 <label for="password">Password</label>
               </div>
             </div>

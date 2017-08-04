@@ -58,9 +58,8 @@
 
 .select-device {
   img {
-    height: 90px;
-    width: 120px;
-    margin-bottom: 40px;
+    width: 165px;
+    margin: 8px -28px;
   }
 
   span {
@@ -203,7 +202,7 @@ button {
 
 .location-form{
   margin: 30px auto;
-  width: 25%;
+  width: 40%;
   float: left;
 
   label {
@@ -215,6 +214,7 @@ button {
   }
 
   input, button {
+    border: 2px #555 solid;
     box-sizing: border-box;
     margin-bottom: 10px;
     font-size: 14px;
@@ -260,6 +260,7 @@ button {
   }
 
   input, button {
+    border: 2px #555 solid;
     box-sizing: border-box;
     margin-bottom: 10px;
     font-size: 14px;
@@ -321,6 +322,7 @@ button {
   margin: auto 0;
 }
 #confirmation-info {
+  margin-top: 50px;
   hr {
     width: 80%;
   }
@@ -342,6 +344,7 @@ button {
   li {
     list-style-type: disc;
     margin: 10px 0;
+    line-height: 1.9;
   }
   hr {
     width: 100%;

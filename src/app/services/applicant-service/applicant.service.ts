@@ -6,8 +6,8 @@ import 'rxjs/add/operator/toPromise';
 export class ApplicantService {
 
   //------------ FOR DEVELOPMENT (UNCOMMENT) --------------------
-  // BASE_URL = "http://localhost:3000";
-  BASE_URL = "";
+  BASE_URL = "http://localhost:3000";
+  // BASE_URL = "";
 
 
   constructor(private myHttp: Http) { }

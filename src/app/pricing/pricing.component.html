@@ -131,19 +131,20 @@
 <div id="issue-modal" class="modal">
   <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
   <div class="modal-content">
-    <div class="row">
-      <div class="col s2">
+    <div style="width=90%; margin: 0 auto;" class="content-wrapper">
+      <div class="row">
+        <div class="col s2">
 
-      </div>
-      <div class="col s9">
-        <h3>Select your issue:</h3>
-        <div class="select-issue center-align" *ngFor="let oneRepairType of repairTypes; let i=index">
-          <button class="repair-item center-align" data-index="i" (click)="selectIssue(oneRepairType, i)">
-            <span> {{oneRepairType}} </span>
-          </button>
         </div>
+        <div class="col s9">
+          <h3>Select your issue:</h3>
+          <div class="select-issue center-align" *ngFor="let oneRepairType of repairTypes; let i=index">
+            <button class="repair-item center-align" data-index="i" (click)="selectIssue(oneRepairType, i)">
+              <span> {{oneRepairType}} </span>
+            </button>
+          </div>
 
-      </div>
+        </div>
       <div class="col s1">
 
       </div>
