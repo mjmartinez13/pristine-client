@@ -46,20 +46,17 @@
       <hr>
 
       <div class="row">
-        <div class="col s2">
-
-        </div>
-        <div class="col s8 center-align">
-          <div class="select-device" *ngFor="let oneDevice of devices">
-            <div (click)="getColors(oneDevice._id, oneDevice.model)">
-              <img src="http://i.imgur.com/nU9LZot.png" />
-              <br />
-              <span> {{ oneDevice.model }} </span>
+        <div class="col s8 offset-s2 center-align">
+          <div id="devices-container">
+            <div class="select-device" *ngFor="let oneDevice of devices">
+              <div (click)="getColors(oneDevice._id, oneDevice.model)">
+                <img src="http://i.imgur.com/nU9LZot.png" />
+                <br />
+                <span> {{ oneDevice.model }} </span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col s2">
 
+          </div>
         </div>
       </div>
     </div>
@@ -67,27 +64,24 @@
     <div id="select-color-container" *ngIf="selectColorBoolean">
       <h2 class="center-align">Select Your Color </h2>
       <hr>
-      <div class="row center-align">
-        <div class="col s2">
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <div id="colors-container">
+            <div class="selection-list" *ngFor="let oneColor of colors">
+              <button *ngIf="oneColor === 'Gold'" class="gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Silver'" class="silver" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Rose Gold'" class="rose-gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Black'" class="black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Jet Black'" class="jet-black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Space Gray'" class="space-gray" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'White'" class="white" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Blue'" class="blue" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Green'" class="green" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Pink'" class="pink" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              <button *ngIf="oneColor === 'Yellow'" class="yellow" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+            </div>
 
-        </div>
-        <div class="col s8">
-          <div class="selection-list" *ngFor="let oneColor of colors">
-            <button *ngIf="oneColor === 'Gold'" class="gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Silver'" class="silver" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Rose Gold'" class="rose-gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Black'" class="black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Jet Black'" class="jet-black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Space Gray'" class="space-gray" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'White'" class="white" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Blue'" class="blue" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Green'" class="green" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Pink'" class="pink" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
-            <button *ngIf="oneColor === 'Yellow'" class="yellow" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
           </div>
-        </div>
-        <div class="col s2">
-
         </div>
       </div>
     </div>
@@ -96,21 +90,18 @@
         <h2 class="center-align"> Select Your Repair </h2>
         <hr>
         <div class="row">
-        <div class="col s2">
+        <div class="col s8 offset-s2">
+          <div id="issues-container">
+            <div class="selection-list" *ngFor="let oneRepairType of repairTypes; let i=index">
+              <button class="repair-item center-align" data-index="i" (click)="selectDate(oneRepairType, i)">
+                <span> {{oneRepairType}} </span>
+              </button>
+            </div>
 
-        </div>
-        <div class="col s8 center-align">
-          <div class="selection-list" *ngFor="let oneRepairType of repairTypes; let i=index">
-            <button class="repair-item center-align" data-index="i" (click)="selectDate(oneRepairType, i)">
-               <span> {{oneRepairType}} </span>
-             </button>
           </div>
           <div>
             <!-- <span *ngFor="let oneCost of repairCosts.repairCost"> {{oneCost}</span> -->
           </div>
-        </div>
-        <div class="col s2">
-
         </div>
       </div>
     </div>
@@ -119,22 +110,17 @@
       <h2 class="center-align"> Select Repair Date </h2>
       <hr>
       <div class="row">
-        <div class="col s2">
-
-        </div>
-        <div class="col s8 center-align">
-
-          <div class="selection-list" *ngFor="let oneDate of availableDays">
-            <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
-            <button (click)="selectTime(oneDate)">
-              {{oneDate | date : "EEEE"}}
-              <br />
-              {{oneDate | date : "MMM d"}}
-            </button>
+        <div class="col s8 offset-s2">
+          <div id="dates-container">
+            <div class="selection-list" *ngFor="let oneDate of availableDays">
+              <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
+              <button (click)="selectTime(oneDate)">
+                {{oneDate | date : "EEEE"}}
+                <br />
+                {{oneDate | date : "MMM d"}}
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="col s2">
-
         </div>
       </div>
     </div>
@@ -143,41 +129,56 @@
       <h2 class="center-align"> Select a Time </h2>
       <hr>
       <div class="row">
-        <div class="col s2">
+        <div class="col l8 m8 s8 offset-l2 offset-m2">
+          <div id="times-container">
+            <div class="selection-list" *ngFor="let oneTime of availableTimes">
 
-        </div>
-        <div class="col s8 center-align">
-          <div class="selection-list" *ngFor="let oneTime of availableTimes">
+              <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
 
-            <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
-
-          </div> -->
+            </div> -->
             <button (click)="provideLocAndCon(oneTime)">
               <span> {{oneTime}} </span>
             </button>
           </div>
-        </div>
-        <div class="col s2">
-
+          </div>
         </div>
       </div>
     </div>
 
     <div *ngIf="locationAndContactBoolean">
       <div class="row">
-        <div class="col s2">
+        <div class="col s8 offset-s2 center-align">
 
-        </div>
-        <div class="col s8 center-align">
           <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
+
           <div class="location-form">
             <h2>Location </h2>
             <div>
-              <!-- <select>
-                <option *ngFor="let county of counties" value= {{county}}>
-                  {{county}}
-                </option>
+
+              <!-- <div class="input-field col s12">
+                <select>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+              </div> -->
+
+
+
+
+
+              <!-- <label for="nike"> County *</label>
+              <select name="nike" id="nike" ng-model="nike" ng-options="let county of counties">
               </select> -->
+
+              <!-- <div *ngFor="let county of counties">
+                {{county}}
+
+              </div> -->
+
+
 
               <!-- <select *ngIf="ng-county === 'Broward'">
                 <option *ngFor="let area of browardAreas" value= {{area}} [(ngModel)]="area">
@@ -193,11 +194,27 @@
 
 
               <label for="county">County <span class="required">*</span></label>
-              <input type="dropdown" name="county" [(ngModel)]="county" required />
+              <select class="county-select center" name="county" placeholder="Select County" [(ngModel)]="county" required>
+                <option [ngValue]="null">Select County</option>
+                <option *ngFor="let county of counties" [value]="county.name">
+                  {{county.name}}
+
+                </option>
+
+              </select>
+              <!-- <input class="center" type="dropdown" name="county" [(ngModel)]="county" required /> -->
             </div>
             <div>
               <label for="area">Area <span class="required">*</span></label>
-              <input type="dropdown" name="area" [(ngModel)]="area" required />
+              <select class="area-select center" name="area" [(ngModel)]="county" required>
+                <option class="selected"[ngValue]="null">Select Area</option>
+                <option *ngFor="let area of miamiAreas" [value]="area">
+                  {{area}}
+
+                </option>
+
+              </select>
+              <!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
             </div>
 
           </div>
@@ -205,15 +222,15 @@
             <h2>Contact Info</h2>
             <div>
               <label for="name">Name <span class="required">*</span></label>
-              <input type="text" name="name" [(ngModel)]="name" required />
+              <input class="center" type="text" name="name" [(ngModel)]="name" required />
             </div>
             <div>
               <label for="email">Email <span class="required">*</span></label>
-              <input type="text" name="email" [(ngModel)]="email" required />
+              <input class="center" type="text" name="email" [(ngModel)]="email" required />
             </div>
             <div>
               <label for="phone">Phone <span class="required">*</span></label>
-              <input type="text" name="phone" [(ngModel)]="phone" required />
+              <input class="center" type="text" name="phone" [(ngModel)]="phone" required />
             </div>
           </div>
           <button class="submit-request-button" type="submit"> Confirm Location and Contact Info </button>

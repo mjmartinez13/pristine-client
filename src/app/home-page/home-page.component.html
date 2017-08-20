@@ -6,18 +6,27 @@
      <div class="parallax"><img src="../../assets/img/hero-section.jpg"></div>
 
        <div class="container">
-       <div class="valign">
-           <div class="row">
-             <div class="col s6 valign-wrapper" style="height: 80vh;">
-               <div class="valign">
-                 <h1>A broken iPhone can be frustrating.</h1>
-                 <hr>
-                 <h2><span>Fixing it</span> shouldn't be</h2>
-               </div>
+         <div class="row">
+           <!-- <div class="col s6 valign-wrapper" style="height: 80vh;">
+             <div class="valign">
+               <h1>A broken iPhone can be frustrating.</h1>
+               <hr>
+               <h2><span>Fixing it</span> shouldn't be</h2>
              </div>
-             <div class="col s6 valign-wrapper right-content" style="height: 80vh;">
-               <div style="width: 100%;" class="valign center-align">
-                 <h3>Any time, any place!</h3>
+           </div>
+           <div class="col s6 valign-wrapper right-content" style="height: 80vh;">
+             <div style="width: 100%;" class="valign center-align">
+               <h3>Any time, any place!</h3>
+               <a routerLink="/repair" class="waves-effect #7cb342 light-green darken-1 btn-large"><i class="material-icons right">phone</i>Repair my Device</a>
+             </div>
+           </div> -->
+           <div class="col s7 offset-s5">
+             <div id="hero-container">
+               <h1>A broken iPhone can be frustrating.</h1>
+               <hr>
+               <h2><span>Fixing it</span> shouldn't be</h2>
+               <div style="width: 100%;" class="">
+                 <!-- <h3>Any time, any place!</h3> -->
                  <a routerLink="/repair" class="waves-effect #7cb342 light-green darken-1 btn-large"><i class="material-icons right">phone</i>Repair my Device</a>
                </div>
              </div>
@@ -27,23 +36,64 @@
      </div>
 </div>
 
+<!-- <section style="background-image: linear-gradient(to top, #fff, #42A5F5);">
+  <div class="container center-align">
+    <div class="row">
+      <h2> Why Choose Us?</h2>
+      <div class="col s3">
+        <p>
+          Covnenient
 
-<section class="work-section">
+        </p>
+      </div>
+      <div class="col s3">
+        <p>
+
+          Fast
+        </p>
+      </div>
+      <div class="col s3">
+        <p>
+
+          Trustworthy
+        </p>
+      </div>
+      <div class="col s3">
+        <p>
+          Customers First
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section id="how-it-works-section" >
     <div class="container center-align">
         <h2>How it Works?</h2>
         <hr>
         <div class="row">
             <div class="col m4 s12">
-              <img src="../../assets/img/rep.png" alt="">
-              <p>Our Pristine Specialist are immediately notified of your request.</p>
+              <div class="steps">
+                <img src="../../assets/img/rep.png" alt="">
+                <p>Our Pristine Specialists are immediately notified of your request.</p>
+
+              </div>
             </div>
             <div class="col m4 s12">
-              <img src="../../assets/img/message.png" alt="">
-              <p>You will receive a call or text message from a Pristine Specialist.</p>
+              <div class="steps">
+                <img src="../../assets/img/message.png" alt="">
+                <p>You will receive a call or text message from a Pristine Specialist.</p>
+
+              </div>
             </div>
             <div class="col m4 s12">
-              <img src="../../assets/img/city.png" alt="">
-              <p>Choose any place to meet that is convenient for you</p>
+              <div class="steps">
+                <img src="../../assets/img/city.png" alt="">
+                <p>Choose any place to meet that is convenient for you (Home, Work, etc.)</p>
+
+              </div>
             </div>
         </div>
     </div>
@@ -85,7 +135,7 @@
 </section>
 
 <section id="repair-section">
-  <div class="container center-align">
+  <div style="display: none;"class="container center-align">
     <p>Don't take our word for it!</p>
     <h2>What our customers say about us</h2>
     <div id="photoShow">

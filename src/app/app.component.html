@@ -2,25 +2,28 @@
   <nav class="#fafafa grey lighten-5">
     <div class="container">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img src="assets/img/main-logo.png"></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/repair">Repair</a></li>
-        <li><a routerLink="/joint">Join Now</a></li>
-        <li><a routerLink="/pricing">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/repair">Repair</a></li>
-        <li><a routerLink="/pricing">Pricing</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-        <li><a href="#login-modal">Tech Login</a></li>
-      </ul>
+      <div class="ws-content">
+        <a routerLink="/" class="brand-logo"><img src="assets/img/main-logo.png"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/repair">Repair</a></li>
+          <li><a routerLink="/joint">Join Now</a></li>
+          <li><a routerLink="/pricing">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/repair">Repair</a></li>
+          <li><a routerLink="/pricing">Pricing</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a href="#login-modal">Tech Login</a></li>
+        </ul>
+
+      </div>
     </div>
     </div>
   </nav>
@@ -81,14 +84,14 @@
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="username" type="email" [(ngModel)]="loginInfo.username" [ngModelOptions]="{standalone: true}" class="validate">
-                <label for="username">Email</label>
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">lock</i>
-                <input id="password" type="password" [(ngModel)]="loginInfo.password" [ngModelOptions]="{standalone: true}" class="validate">
+                <input id="password" type="password" class="validate">
                 <label for="password">Password</label>
               </div>
             </div>

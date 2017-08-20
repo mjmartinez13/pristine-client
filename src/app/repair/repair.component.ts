@@ -4,6 +4,7 @@ import { RepairDetailService } from '../services/repair-detail-service/repair-de
 import { Router } from '@angular/router';
 import { MomentModule } from 'angular2-moment';
 import * as moment from 'moment';
+import { FormControl, FormGroup } from '@angular/forms';
 
 declare var jQuery: any;
 declare var $: any;
@@ -92,6 +93,8 @@ export class RepairComponent implements OnInit {
   email: String;
   phone: String;
   county: String;
+  counties: any;
+  miamiAreas: Array<String> = ["Aventura", "Brickell", "Coral Gables", "Doral", "FIU"];
   area: String;
 
   //Object variable that will hold all request details to send to api.
@@ -104,6 +107,7 @@ export class RepairComponent implements OnInit {
 
   ngOnInit() {
 
+    this.counties = [{name: "Broward"}, {name: "Miami-Dade"}];
 
     this.selectModelBoolean = true;
 
@@ -115,6 +119,8 @@ export class RepairComponent implements OnInit {
     .catch((err)=>{
       this.errorMessage = 'There was an error. Try again later.'
     });
+
+    $('select').material_select();
   }
 
   //Gets the details for one single phone model by id.
@@ -270,5 +276,9 @@ export class RepairComponent implements OnInit {
 
     console.log ("A pristine specialist will reach out to you shortly!")
   }
+
+  // function County($scope){
+  //   $scope.counties=[{name: "Broward"}, {name: "Miami-Dade"}];
+  // }
 
 }

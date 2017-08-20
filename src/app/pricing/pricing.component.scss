@@ -1,3 +1,5 @@
+@import "../../_variables.scss";
+
 @font-face {
     font-family: 'Novecentosanswide-Book';
     src: url('../../assets/fonts/Novecentosanswide-Book-webfont.woff2') format('woff2'),
@@ -27,6 +29,7 @@ a:hover {
 blockquote {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+  border-left: 5px solid $company-green;
   color: #a5a4a4;
   font-style: italic;
   font-size: 20px;
@@ -49,9 +52,6 @@ blockquote {
     color: #555;
     font-weight: bold;
   }
-  a {
-    margin-right: 50px;
-  }
 
   hr {
     width: 100%;
@@ -61,6 +61,7 @@ blockquote {
 
 .option, {
   margin: 20px 0 20px 0;
+  font-size: 18px;
 }
 
 .promotion {
@@ -131,5 +132,47 @@ blockquote {
     background-color: white;
     border: 3px #337AB7 solid;
     border-radius: 7px;
+  }
+}
+
+#promo-container {
+  display: flex;
+  justify-content: space-around;
+  .promo-flex {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      align-self: center;
+      margin-left: 25px;
+      font-size: 12px;
+    }
+  }
+  .repair-btn {
+    font-size: 16px;
+    align-self: center;
+  }
+}
+
+
+
+
+#device-modal, #issue-modal {
+  border-radius: 8px;
+}
+
+#issue-modal {
+  #issue-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}
+
+#device-modal {
+  #device-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

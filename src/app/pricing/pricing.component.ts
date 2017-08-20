@@ -28,6 +28,7 @@ export class PricingComponent implements OnInit {
   ngOnInit() {
     $('#device-modal').modal();
     $('#issue-modal').modal();
+    $('select').material_select();
 
 
     //Loads screen with all initial phone models

@@ -1,105 +1,102 @@
 <section id="pricing-container">
-  <div class="container center-align">
-    <div class="row">
-      <div class="col s12">
-
-        <div id="included">
-          <div class="container center-align">
-            <div class="row">
-              <h3>What's included?</h3>
-              <div class="col s3">
-                <i class="material-icons">person_pin</i>
-                <p> A Pristine Specialist <br />
-                  Comes to you.</p>
-              </div>
-              <div class="col s3">
-                <i class="material-icons">stars</i>
-                <p> Quality parts <br />
-                  guranteed.</p>
-              </div>
-              <div class="col s3">
-                  <i class="material-icons">loyalty</i>
-                  <p> Lifetime warranted <br />
-                    service.</p>
-                </div>
-                <div class="col s3">
-                    <i class="material-icons">query_builder</i>
-                    <p> Repairs are done in <br />
-                      as little as 20 minutes.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-
-            <div class="row">
-              <div class="col s12">
-
-                <blockquote> <span class="quote">"</span> A broken phone can be <strong>frustrating</strong>,
-                  <span style="font-weight: bold; color: #555;">fixing</span> it should't be. <span class="quote">"</span>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        <h2>Get quoted instantly...</h2>
-        <div id="generate-quote">
+<div class="container center-align">
+  <div class="row">
+    <div class="col s12">
+      <div id="included">
+        <div class="container center-align">
           <div class="row">
-            <div class="col s2">
-
+            <h3>What's included?</h3>
+            <div class="col s3">
+              <i class="material-icons">person_pin</i>
+              <p> A Pristine Specialist <br />
+                Comes to you.</p>
             </div>
-            <div class="col s8">
-              <div class="row option">
-                <div class="col s2">
-                  Chosen device:
-                </div>
-                <div class="col s7">
-                   <span> {{ device }}</span>
-                </div>
-                <div class="col s3">
-                  <a data-target="device-modal">Change Device</a>
-                </div>
-              </div>
-              <hr />
-              <div class="row option">
-                <div class="col s2">
-                  Chosen issue:
-                </div>
-                <div class="col s7">
-                   <span>{{ repairType }}</span>
-                </div>
-                <div class="col s3">
-                  <a data-target="issue-modal">Change Issue</a>
-                </div>
-              </div>
-              <hr />
-              <div class="row">
-                <div class="col s6">
-                  <div *ngIf="repairType==='Screen'">
-                    <div class="row option promotion">
-                      <i class="material-icons left">redeem</i> Tempered Glass Included
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="col s6 price">
-
-                  <h3> Our Price: ${{ repairCost }}</h3>
-                </div>
-
-              </div>
-
+            <div class="col s3">
+              <i class="material-icons">stars</i>
+              <p> Quality parts <br />
+                guranteed.</p>
             </div>
-            <div class="col s2">
-
+            <div class="col s3">
+                <i class="material-icons">loyalty</i>
+                <p> Lifetime warranted <br />
+                  service.</p>
+            </div>
+            <div class="col s3">
+                <i class="material-icons">query_builder</i>
+                <p> Repairs are done in <br />
+                  as little as 20 minutes.</p>
             </div>
           </div>
-
         </div>
+      </div>
 
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <blockquote> <span class="quote">"</span> A broken phone can be <strong>frustrating</strong>,
+              <span style="font-weight: bold; color: #555;">fixing</span> it should't be. <span class="quote">"</span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <h2>Get quoted instantly...</h2>
+      <div id="generate-quote">
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div class="row option">
+              <div class="col s3">
+                Chosen device:
+              </div>
+              <div class="col s6">
+                 <span> {{ device }}</span>
+              </div>
+              <div class="col s3">
+                <a data-target="device-modal">Change Device</a>
+              </div>
+            </div>
+            <hr />
+            <div class="row option">
+              <div class="col s3">
+                Chosen issue:
+              </div>
+              <div class="col s6">
+                 <span>{{ repairType }}</span>
+              </div>
+              <div class="col s3">
+                <a data-target="issue-modal">Change Issue</a>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col s6">
+                <div *ngIf="repairType==='Screen'">
+                  <div class="row option promotion">
+                    <i class="material-icons left">redeem</i> Tempered Glass Included
+                  </div>
+                </div>
 
+              </div>
 
+              <div class="col s6 price">
+                <h3> Our Price: ${{ repairCost }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row center-align">
+          <div id="promo-container" class="col s8 offset-s2">
+            <div class="promo-flex">
+              <div class="input-field promo-code">
+                <input type="text" name="promoCode">
+                <label class="center" for="promoCode">Enter Promo Code:</label>
+              </div>
+
+              <a class="waves-effect waves-light btn light-green darken-1">Apply</a>
+              </div>
+              <a class="waves-effect waves-light btn light-green darken-1 repair-btn"><i class="material-icons right">insert_invitation</i>Repair Now</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -109,20 +106,15 @@
   <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
   <div class="modal-content center-align">
     <div class="row">
-      <div class="col s1">
-
-      </div>
-      <div class="col s10">
+      <div class="col s8 offset-s2">
         <h3>Select your model:</h3>
-        <div class="select-device" *ngFor="let oneDevice of devices">
-          <button (click)="selectDevice(oneDevice._id, oneDevice.model)">
-            <span> {{ oneDevice.model }} </span>
-          </button>
+        <div id="device-container">
+          <div class="select-device" *ngFor="let oneDevice of devices">
+            <button (click)="selectDevice(oneDevice._id, oneDevice.model)">
+              <span> {{ oneDevice.model }} </span>
+            </button>
+          </div>
         </div>
-
-      </div>
-      <div class="col s1">
-
       </div>
     </div>
   </div>
@@ -130,23 +122,17 @@
 
 <div id="issue-modal" class="modal">
   <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
-  <div class="modal-content">
-    <div style="width=90%; margin: 0 auto;" class="content-wrapper">
-      <div class="row">
-        <div class="col s2">
-
-        </div>
-        <div class="col s9">
-          <h3>Select your issue:</h3>
+    <div class="modal-content">
+    <div class="row center-align">
+      <div class="col s8 offset-s2">
+        <h3>Select your issue:</h3>
+        <div id="issue-container">
           <div class="select-issue center-align" *ngFor="let oneRepairType of repairTypes; let i=index">
             <button class="repair-item center-align" data-index="i" (click)="selectIssue(oneRepairType, i)">
               <span> {{oneRepairType}} </span>
             </button>
           </div>
-
         </div>
-      <div class="col s1">
-
       </div>
     </div>
   </div>

@@ -1,6 +1,15 @@
+@import "../../_variables.scss";
+
 
 #hero-section {
   height: 80vh;
+
+  #hero-container {
+    position: absolute;
+    right: 7%;
+    width: 40%;
+    bottom: 45%;
+  }
 
   .overlay {
     background-color: rgba(57,66,75, .5);
@@ -12,16 +21,18 @@
   }
   h1 {
     color: #fff;
-    font-size: 400%;
+    font-size: 2.43vw;
     font-weight: 400;
   }
   h2 {
-    color: #85BC3C;
+    color: $company-green;
+    font-size: 2.08vw;
     font-weight: 600;
     text-transform: uppercase;
 
     span {
       text-transform: capitalize;
+      font-size: 2.1vw;
       font-weight: 400;
       color: #fff;
     }
@@ -32,21 +43,34 @@
   }
   h3 {
     font-weight: 600;
-    font-size: 200%;
+    font-size: 1.23vw;
     margin-bottom: 20px;
     color: #fff;
   }
 }
 
 
-.work-section {
+#how-it-works-section {
   padding: 60px 0;
+  background-color: #fff;
+
+  .steps {
+    // background-image: linear-gradient(to bottom, #0161C7, #0161C7);
+
+    border: 3px solid $company-blue;
+    padding: 30px 70px;
+    margin: 10px;
+    border-radius: 7px;
+  }
 
   h2 {
-    color: #555;
+    color: $company-blue;
+    // color: #fff;
+
+
   }
   hr {
-    border: 2px solid #555;
+    border: 2px solid $company-blue;
     width: 5%;
     display: inline-block;
     text-align: center;
@@ -58,7 +82,7 @@
   }
   p {
     font-size: 120%;
-    color: #555;
+    color: $company-blue;
   }
 
 }
