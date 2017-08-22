@@ -34,6 +34,8 @@ export class RepairComponent implements OnInit {
   selectDateBoolean: boolean = false;
   selectTimeBoolean: boolean = false;
   locationAndContactBoolean: boolean = false;
+  browardCountyBoolean: boolean = true;
+  miamiCountyBoolean: boolean = true;
   verificationBoolean: boolean = false;
 
   currentDate: Date = moment().toDate();
@@ -94,6 +96,7 @@ export class RepairComponent implements OnInit {
   phone: String;
   county: String;
   counties: any;
+  browardAreas: Array<String> = ["Cooper City", "Davie", "Pembroke Pines", "Miramar", "Weston"];
   miamiAreas: Array<String> = ["Aventura", "Brickell", "Coral Gables", "Doral", "FIU"];
   area: String;
 

@@ -52,3 +52,16 @@ h2 {
   width: 90%;
   margin: 0 auto;
 }
+
+.colorful {
+	background:
+		-webkit-linear-gradient(45deg, hsla(200, 98%, 50%, 1) 0%, hsla(200, 98%, 50%, 0) 70%),
+		-webkit-linear-gradient(315deg, hsla(90, 96%, 49%, 1) 10%, hsla(90, 96%, 49%, 0) 80%),
+		-webkit-linear-gradient(225deg, hsla(197, 27%, 53%, 1) 10%, hsla(197, 27%, 53%, 0) 80%),
+		-webkit-linear-gradient(135deg, hsla(242, 99%, 42%, 1) 100%, hsla(242, 99%, 42%, 0) 70%);
+	background:
+		linear-gradient(45deg, hsla(200, 98%, 50%, 1) 0%, hsla(200, 98%, 50%, 0) 70%),
+		linear-gradient(135deg, hsla(90, 96%, 49%, 1) 10%, hsla(90, 96%, 49%, 0) 80%),
+		linear-gradient(225deg, hsla(197, 27%, 53%, 1) 10%, hsla(197, 27%, 53%, 0) 80%),
+		linear-gradient(315deg, hsla(242, 99%, 42%, 1) 100%, hsla(242, 99%, 42%, 0) 70%);
+	}

@@ -1,7 +1,7 @@
 <div class="container" *ngIf="requestBarBoolean">
   <div class="valign-wrapper" id="progress-bar">
     <div class="valign">
-      <div class="line"></div>
+      <div class="line hide-on-small-only"></div>
       <div class="row">
         <div class="col s4 center-align">
           <p id="step-1" class="active">1</p>
@@ -147,96 +147,108 @@
 
     <div *ngIf="locationAndContactBoolean">
       <div class="row">
-        <div class="col s8 offset-s2 center-align">
+        <div class="col m8 s12 offset-m2 center-align">
+          <div class="row">
+            <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
 
-          <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
+                <div class="contact-form">
+                  <h2>Almost Done!</h2>
+                  <h5>Tell us how to reach you...</h5>
+                  <div>
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input class="center" placeholder="Your Name *"type="text" name="name" [(ngModel)]="name" required />
+                  </div>
+                  <div>
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input class="center" placeholder="Your Email*" type="text" name="email" [(ngModel)]="email" required />
+                  </div>
+                  <div>
+                    <label for="phone">Phone <span class="required">*</span></label>
+                    <input class="center" placeholder="Your Phone*" type="text" name="phone" [(ngModel)]="phone" required />
+                  </div>
+                </div>
+                <div class="location-form center-align">
+                  <!-- <h2>Location </h2> -->
+                  <div>
 
-          <div class="location-form">
-            <h2>Location </h2>
-            <div>
-
-              <!-- <div class="input-field col s12">
-                <select>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-              </div> -->
+                    <!-- <div class="input-field col s12">
+                    <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Materialize Select</label>
+                </div> -->
 
 
 
 
 
-              <!-- <label for="nike"> County *</label>
-              <select name="nike" id="nike" ng-model="nike" ng-options="let county of counties">
+                <!-- <label for="nike"> County *</label>
+                <select name="nike" id="nike" ng-model="nike" ng-options="let county of counties">
               </select> -->
 
               <!-- <div *ngFor="let county of counties">
-                {{county}}
+              {{county}}
 
-              </div> -->
-
-
-
-              <!-- <select *ngIf="ng-county === 'Broward'">
-                <option *ngFor="let area of browardAreas" value= {{area}} [(ngModel)]="area">
-                  {{area}}
-                </option>
-              </select>
-
-              <select *ngIf="ng-county === 'Miami-Dade'">
-                <option *ngFor="let area of miamiAreas" value= {{area}} [(ngModel)]="area">
-                  {{area}}
-                </option>
-              </select> -->
+            </div> -->
 
 
-              <label for="county">County <span class="required">*</span></label>
-              <select class="county-select center" name="county" placeholder="Select County" [(ngModel)]="county" required>
-                <option [ngValue]="null">Select County</option>
-                <option *ngFor="let county of counties" [value]="county.name">
-                  {{county.name}}
 
-                </option>
+            <!-- <select *ngIf="ng-county === 'Broward'">
+            <option *ngFor="let area of browardAreas" value= {{area}} [(ngModel)]="area">
+            {{area}}
+          </option>
+        </select>
 
-              </select>
-              <!-- <input class="center" type="dropdown" name="county" [(ngModel)]="county" required /> -->
-            </div>
-            <div>
-              <label for="area">Area <span class="required">*</span></label>
-              <select class="area-select center" name="area" [(ngModel)]="county" required>
-                <option class="selected"[ngValue]="null">Select Area</option>
-                <option *ngFor="let area of miamiAreas" [value]="area">
-                  {{area}}
+        <select *ngIf="ng-county === 'Miami-Dade'">
+        <option *ngFor="let area of miamiAreas" value= {{area}} [(ngModel)]="area">
+        {{area}}
+      </option>
+    </select> -->
 
-                </option>
+  <label for="county">Please Select the County <span class="required">*</span></label>
+  <select class="county-select center-align" name="county" placeholder="Select County" [(ngModel)]="county" required>
+    <option class="center"*ngFor="let county of counties" [value]="county.name">
+      {{county.name}}
 
-              </select>
-              <!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
-            </div>
+    </option>
 
+  </select>
+  <!-- <input class="center" type="dropdown" name="county" [(ngModel)]="county" required /> -->
+</div>
+<div *ngIf="browardCountyBoolean">
+  <label for="area">Please Select the closest Area <span class="required">*</span></label>
+  <select class="area-select center" name="area" [(ngModel)]="area" required>
+
+    <option *ngFor="let area of browardAreas" [value]="area">
+      {{area}}
+
+    </option>
+
+  </select>
+  <!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
+</div>
+<div *ngIf="miamiCountyBoolean">
+  <label for="area">Please Select the closest Area <span class="required">*</span></label>
+  <select class="area-select center" name="area" [(ngModel)]="area" required>
+
+    <option *ngFor="let area of miamiAreas" [value]="area">
+      {{area}}
+
+    </option>
+
+  </select>
+  <!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
+</div>
+
+</div>
+
+
+<button class="submit-request-button" type="submit"> Confirm Location and Contact Info </button>
+</form>
           </div>
-          <div class="contact-form">
-            <h2>Contact Info</h2>
-            <div>
-              <label for="name">Name <span class="required">*</span></label>
-              <input class="center" type="text" name="name" [(ngModel)]="name" required />
-            </div>
-            <div>
-              <label for="email">Email <span class="required">*</span></label>
-              <input class="center" type="text" name="email" [(ngModel)]="email" required />
-            </div>
-            <div>
-              <label for="phone">Phone <span class="required">*</span></label>
-              <input class="center" type="text" name="phone" [(ngModel)]="phone" required />
-            </div>
-          </div>
-          <button class="submit-request-button" type="submit"> Confirm Location and Contact Info </button>
-        </form>
-        </div>
-        <div class="col s3">
 
         </div>
       </div>

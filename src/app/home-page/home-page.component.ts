@@ -32,7 +32,7 @@ export class HomePageComponent implements OnInit {
     });
 
     $('.review-1').css('opacity', '1');
-     setInterval(rotateImages, 5000);
+     setInterval(rotateImages, 6000);
 
 
     function rotateImages() {

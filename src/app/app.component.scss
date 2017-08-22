@@ -16,7 +16,6 @@ nav {
 
 
 footer {
-  text-align: center;
   background: #32373c;
   color: #fff;
   padding: 60px 0;
@@ -27,6 +26,10 @@ footer {
     margin-bottom: 20px;
   }
 
+  span {
+    margin: 10px;
+  }
+
   a {
     display: block;
     color: #fff;
@@ -35,8 +38,16 @@ footer {
     color: #acaeb0;
     margin-bottom: 10px;
 
+
     i {
       margin-right: 5px;
+      font-size: 35px;
+    }
+  }
+  .follow {
+    a{
+      display: inline;
+      margin: 0 10px 0 0;
     }
   }
   p {
