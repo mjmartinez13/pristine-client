@@ -11,13 +11,12 @@ import { AboutComponent } from './about/about.component';
 import { JointComponent } from './joint/joint.component';
 import { RepairComponent } from './repair/repair.component';
 import { PricingComponent } from './pricing/pricing.component';
-import { LoginComponent } from './login/login.component';
 
 
 //-----------------Services ---------------------------------
 import { ApplicantService } from './services/applicant-service/applicant.service';
 import { DeviceService } from './services/device-service/device.service';
-import { SessionService } from './services/session-service/session.service'
+
 import { RepairDetailService } from './services/repair-detail-service/repair-detail.service';
 import { MomentModule } from 'angular2-moment';
 @NgModule({
@@ -27,8 +26,7 @@ import { MomentModule } from 'angular2-moment';
     AboutComponent,
     JointComponent,
     RepairComponent,
-    PricingComponent,
-    LoginComponent
+    PricingComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +38,7 @@ import { MomentModule } from 'angular2-moment';
   providers: [
     ApplicantService,
     DeviceService,
-    RepairDetailService,
-    SessionService
+    RepairDetailService
   ],
   bootstrap: [AppComponent]
 })

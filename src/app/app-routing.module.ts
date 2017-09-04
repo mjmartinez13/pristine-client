@@ -12,8 +12,6 @@ import { RepairComponent } from './repair/repair.component';
 
 import { PricingComponent } from './pricing/pricing.component';
 
-import { LoginComponent } from './login/login.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -34,10 +32,6 @@ const routes: Routes = [
   {
     path: 'pricing',
     component: PricingComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   }
 
 ];

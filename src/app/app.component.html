@@ -3,15 +3,20 @@
     <div class="container">
     <div class="nav-wrapper">
       <div class="ws-content">
-        <a routerLink="/" class="brand-logo"><img src="assets/img/main-logo.png"></a>
+        <a routerLink="/" class="brand-logo hide-on-med-and-down"><img src="assets/img/main-logo.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/about">About</a></li>
           <li><a routerLink="/repair">Repair</a></li>
+          <!-- <li><a routerLink="/"><img src="assets/img/main-logo.png"></a></li> -->
           <li><a routerLink="/joint">Join Now</a></li>
           <li><a routerLink="/pricing">Pricing</a></li>
           <li><a href="#">Contact</a></li>
+          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
+        </ul>
+        <ul class="center hide-on-med-and-up button-box">
+          <li><a routerLink="/repair" class="waves-effect #7cb342 light-green darken-1 btn">Repair</a></li>
           <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -85,7 +90,7 @@
   <h4 class="center-align">Log In</h4>
   <div class="row">
         <div class="row">
-          <form (ngSubmit)="login()" #myForm="ngForm" class="col s12">
+          <form method="post" action="/login" class="col s12">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
