@@ -17,17 +17,17 @@
   <div class="row benefits">
     <div class="container">
 
-    <div class="col s4 center-align col-hide" style="opacity: 0;">
+    <div class="col m4 s12 center-align col-hide" style="opacity: 0;">
       <i class="ion-social-usd"></i>
       <h4>Earn More</h4>
       <p>Make up to $50/hour repairing smartphones in your area. Our top technicians make more than $2000 a week.</p>
     </div>
-    <div class="col s4 center-align col-hide" style="opacity: 0;">
+    <div class="col m4 s12 center-align col-hide" style="opacity: 0;">
       <i class="ion-android-calendar"></i>
       <h4>Work on your time</h4>
       <p>Make this a part time or full time gig. You choose when and where you want to work, be your own boss</p>
     </div>
-    <div class="col s4 center-align col-hide" style="opacity: 0;">
+    <div class="col m4 s12 center-align col-hide" style="opacity: 0;">
       <i class="ion-umbrella"></i>
       <h4>You're never alone</h4>
       <p>Our HQ support team will assist with logistics, payments and provide you with the best tools and parts for the job.</p>
@@ -44,41 +44,41 @@
     <div class="row">
       <form class="col s12" (ngSubmit)="submitApplication()" #myForm="ngForm">
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col l6 s6">
             <input id="first_name" type="text" name ="firstName" class="validate" required="true" [(ngModel)]="applicationInfo.firstName" required>
             <label for="first_name">First Name</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col l6 s6">
             <input id="last_name" type="text" name ="lastName" class="validate" [(ngModel)]="applicationInfo.lastName" required>
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col l6 s6">
             <input id="phoneNumber" type="number" name ="phone" class="validate" [(ngModel)]="applicationInfo.phone" required>
             <label for="phoneNumber">Phone Number</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col l6 s6">
             <input id="email" type="email" name ="email" class="validate" [(ngModel)]="applicationInfo.email" required>
             <label for="email">Email Address</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s8">
+          <div class="input-field col l8 m8 s12">
             <input id="address" type="text" name ="address" class="validate" [(ngModel)]="applicationInfo.address" required>
             <label for="address">Address</label>
           </div>
-          <div class="input-field col s2">
+          <div class="input-field col m2 s6">
             <input id="state" type="text" name ="state" class="validate" [(ngModel)]="applicationInfo.state" required>
             <label for="state">State</label>
           </div>
-          <div class="input-field col s2">
+          <div class="input-field col m2 s6">
             <input id="zipcode" type="text" name ="zipcode" class="validate" [(ngModel)]="applicationInfo.zipCode" required>
             <label for="zipcode">Zip Code</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select>
               <option value="" disabled selected>Select One</option>
               <option name ="background" value="1" [(ngModel)]="applicationInfo.background">Yes</option>
@@ -86,7 +86,7 @@
             </select>
             <label>Would you pass a background check?</label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="workInUs">
               <option value="" disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.workInUs">Yes</option>
@@ -94,7 +94,7 @@
             </select>
             <label>Are you authorized to work in the US?</label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="over18">
               <option value="" disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.over18">Yes</option>
@@ -104,11 +104,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <input type="date" id="availibility" name ="ableToStart" class="datepicker" [(ngModel)]="applicationInfo.ableToStart">
             <label for="availibility">Availibility to start? </label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="bestContactTime">
               <option value="" disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.bestContactTime">Mornings</option>
@@ -117,7 +117,7 @@
             </select>
             <label>What is the best time to contact you? </label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="pastExperience">
               <option value="" disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.pastExperience">Less than a Year</option>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="numberOfPhonesDone">
               <option value="" disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.numberOfPhonesDone">1 - 50 </option>
@@ -137,7 +137,7 @@
             </select>
             <label>Number of smart phones previously repaired </label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="numberOfTabletsDone">
               <option value="" disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.numberOfTabletsDone">1 - 50 </option>
@@ -146,7 +146,7 @@
             </select>
             <label>Number of tablets previously repaired </label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col l4 s12">
             <select name ="referredBy">
               <option disabled selected>Select One</option>
               <option value="1" [(ngModel)]="applicationInfo.referredBy"> Internet </option>

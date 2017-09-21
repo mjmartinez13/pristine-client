@@ -11,12 +11,27 @@
   .line {
     position: absolute;
     width: 49%;
-    top: 16.8%;
-    left: 25%;
+    top: 18.8%;
+    left: 26%;
     margin: auto;
     height: 2px;
     background-color: #ddd;
     z-index: -1;
+
+    @media (max-width: 1440px){
+      top: 20%;
+    }
+
+    @media (max-width: 998px){
+      width: 56%;
+      top: 20.2%;
+      left: 22%;
+    }
+
+    @media (max-width: 768px){
+      width: 55%;
+      left: 23%;
+    }
   }
   p {
     display: inline-block;
@@ -34,6 +49,10 @@
     background: #7cb342;
     border: 3px solid #7cb342;
     color: #fff;
+  }
+
+  #step-1, #step-2, #step-3 {
+    margin-top: 40px;
   }
 }
 
@@ -68,6 +87,9 @@
       img {
         width: 165px;
         margin: 8px -28px;
+        @media (max-width: 768px){
+          display: none;
+        }
       }
 
       span {
@@ -78,7 +100,7 @@
         // margin: 0, auto;
         overflow: hidden;
         width: 150px;
-        height: 200px;
+        max-height: 200px;
         float: left;
         padding: 15px;
         margin: 15px;
@@ -86,6 +108,9 @@
         background-color: white;
         border: 3px #337AB7 solid;
         border-radius: 7px;
+        @media (max-width: 768px){
+          padding-top: 0;
+        }
       }
     }
   }
@@ -113,7 +138,7 @@ button {
     button {
       height: 100px;
       width: 100px;
-      border-radius: 50% 50%;
+      // border-radius: 50% 50%;
     }
     .gold {
       background-color: var(--gold);
@@ -243,8 +268,12 @@ button {
     margin: 0 auto;
     font-size: 20px;
     width: 50%;
+
   }
 
+  .county-select:focus, .area-select:focus{
+    box-shadow: none;
+  }
   label {
     color: #666;
     display: inline-block;
@@ -332,13 +361,14 @@ button {
 
 .submit-request-button {
   font-size: 20px;
-  width: 100%;
-  float:left;
+  width: 50%;
+  float: none;
   clear: both;
-  margin-top: 25px;
-  margin-left: 0;
+  margin-top: 25px auto 0;
+  // margin-left: 0;
   background-color: white;
   border: 3px #337AB7 solid;
+  border-radius: 50px;
   font-weight: bold;
 
 }
@@ -361,8 +391,16 @@ button {
 }
 #confirmation-info {
   margin-top: 50px;
+
+  .repair-info {
+    width: 50%;
+    @media (max-width: 425px){
+      width: 100%;
+    }
+    margin: 0 auto;
+  }
   hr {
-    width: 80%;
+    width: 100%;
   }
 
   span {
@@ -372,17 +410,29 @@ button {
     font-weight: bold;
     margin-top: 5px;
   }
-  div {padding-bottom: 30px;}
+  div {
+    padding-bottom: 30px;
+  }
 }
 
 #next-steps {
   div {
     padding: 30px;
+    @media (max-width: 768px){
+      padding: 24px;
+    }
+    @media (max-width: 425px){
+      padding: 25px;
+    }
   }
-  li {
-    list-style-type: disc;
-    margin: 10px 0;
-    line-height: 1.9;
+
+  i {
+    font-size: 60px;
+    color: $company-green;
+  }
+
+  p {
+
   }
   hr {
     width: 100%;

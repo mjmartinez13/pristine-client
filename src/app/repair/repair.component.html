@@ -15,7 +15,7 @@
         </div>
         <div class="col s4 center-align">
           <p id="step-2">2</p>
-          <h5>Issue</h5>
+          <h5>The Repair</h5>
           <div>
             <strong><span id="request-info">{{ repairType }} </span></strong>
             Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
@@ -246,7 +246,7 @@
 </div>
 
 
-<button class="submit-request-button" type="submit"> Confirm Location and Contact Info </button>
+<button class="submit-request-button" type="submit"> Submit Request </button>
 </form>
           </div>
 
@@ -268,73 +268,103 @@
                 <img src="../assets/img/city.png" />
               </div>
             </div>
-            <div class="row">
-              <div class="col s7">
-                <div class="row">
-                  <div class="col s3">
-                    Device:
+            <div class="repair-info">
+              <div class="row">
+                <div class="col s12">
+                  <div class="row">
+                    <div class="col s3">
+                      Device:
+                    </div>
+                    <div class="col s9">
+                      <span> {{ device }} {{ model }}, {{ color }} </span>
+                    </div>
+                    <hr />
                   </div>
-                  <div class="col s9">
-                    <span> {{ device }} {{ model }}, {{ color }} </span>
+                  <div class="row">
+                    <div class="col s3">
+                      Issue:
+                    </div>
+                    <div class="col s9">
+                      <span> {{ repairType }} </span>
+                      <span *ngIf="repairType === 'Screen'"> (Tempered Glass Screen Protector Included)</span>
+                    </div>
+                    <hr />
                   </div>
-                  <hr />
-                </div>
-                <div class="row">
-                  <div class="col s3">
-                    Issue:
+                  <div class="row">
+                    <div class="col s3">
+                      Cost:
+                      <br />
+                    </div>
+                    <div class="col s9">
+                      <span> ${{ repairCost }} </span>
+                      <br />
+                      (Pay for repair once completed)
+                    </div>
+                    <hr />
                   </div>
-                  <div class="col s9">
-                    <span> {{ repairType }} </span>
-                    <span *ngIf="repairType === 'Screen'"> (Tempered Glass Screen Protector Included)</span>
+                  <div class="row">
+                    <div class="col s3">
+                      Expect us at:
+                    </div>
+                    <div class="col s9">
+                      <span> {{ requestedTime }} </span>
+                    </div>
+                    <hr />
                   </div>
-                  <hr />
-                </div>
-                <div class="row">
-                  <div class="col s3">
-                    Cost:
-                    <br />
-                  </div>
-                  <div class="col s9">
-                    <span> ${{ repairCost }} </span>
-                    <br />
-                    (Pay for repair once completed)
-                  </div>
-                  <hr />
-                </div>
-                <div class="row">
-                  <div class="col s3">
-                    Expect us at:
-                  </div>
-                  <div class="col s9">
-                    <span> {{ requestedTime }} </span>
-                  </div>
-                  <hr />
-                </div>
-                <div class="row">
-                  <div class="col s3">
-                    Your info:
-                  </div>
-                  <div class="col s9">
-                    <p>
-                      {{ name }}
-                    </p>
-                    <p>
-                      {{ county }}, {{ area }}
-                    </p>
-                    <p>
-                      {{ email }}
-                    </p>
-                    <p>
-                      {{ phone }}
-                    </p>
+                  <div class="row">
+                    <div class="col s3">
+                      Your info:
+                    </div>
+                    <div class="col s9">
+                      <p>
+                        {{ name }}
+                      </p>
+                      <p>
+                        {{ county }}, {{ area }}
+                      </p>
+                      <p>
+                        {{ email }}
+                      </p>
+                      <p>
+                        {{ phone }}
+                      </p>
 
+                    </div>
                   </div>
                 </div>
               </div>
-              <div id="next-steps" class="col s5">
+
+              <hr />
+            </div>
+            <div class="row">
+              <div id="next-steps" class="col s12">
                 <h2 class="center-align">What happens next?</h2>
                 <div>
-                  <ul>
+                  <div class="row center">
+                    <div class="col m4 s12">
+                      <i class="material-icons">message</i>
+                      <p>
+                        You will receive an email confirmation as well as a text
+                        to the number you have provided.
+                      </p>
+                    </div>
+                    <div class="col m4 s12">
+                      <i class="material-icons">business</i>
+                      <p>
+                        A Pristine Specialist will repair your device at the time
+                        and location you requested.
+                      </p>
+                    </div>
+                    <div class="col m4 s12">
+                      <i class="material-icons">local_atm</i>
+                      <p>
+                        Payment will be collected via one of our approved payment
+                        methods upon completion of the repair.
+                      </p>
+
+                    </div>
+                  </div>
+                  <!-- <ul>
                     <li>
                       A local Pristine Specialist will be assigned to you repair
                       and you will receive a email confirmation as well as a text
@@ -348,13 +378,13 @@
                       Payment will be collected via one of our approved payment
                       methods upon completion of the repair.
                     </li>
-                  </ul>
+                  </ul> -->
 
                 </div>
                 <hr />
                 <h2 class="center-align">Any questions or concerns?</h2>
-                <h2 class="center-align"> (954) 633-5010</h2>
-                <h2 class="center-align">Email Us: pristine.wireless@gmail.com</h2>
+                <h5 class="center-align">Call Us:<br />(954) 633-5010</h5>
+                <h5 class="center-align">Email Us:<br /> pristine.wireless@gmail.com</h5>
               </div>
             </div>
           </div>

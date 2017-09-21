@@ -44,31 +44,31 @@
         <div class="row">
           <div class="col s8 offset-s2">
             <div class="row option">
-              <div class="col s3">
+              <div class="col m3 s12 center">
                 Chosen device:
               </div>
-              <div class="col s6">
+              <div class="col m6 s12 center">
                  <span> {{ device }}</span>
               </div>
-              <div class="col s3">
+              <div class="col m3 s12 center">
                 <a data-target="device-modal">Change Device</a>
               </div>
             </div>
             <hr />
             <div class="row option">
-              <div class="col s3">
+              <div class="col m3 s12 center">
                 Chosen issue:
               </div>
-              <div class="col s6">
+              <div class="col m6 s12 center">
                  <span>{{ repairType }}</span>
               </div>
-              <div class="col s3">
+              <div class="col m3 s12 center">
                 <a data-target="issue-modal">Change Issue</a>
               </div>
             </div>
             <hr />
             <div class="row">
-              <div class="col s6">
+              <div class="col m6 s12">
                 <div *ngIf="repairType==='Screen'">
                   <div class="row option promotion">
                     <i class="material-icons left">redeem</i> Tempered Glass Included
@@ -77,14 +77,28 @@
 
               </div>
 
-              <div class="col s6 price">
+              <div class="col m6 s12 price">
                 <h3> Our Price: ${{ repairCost }}</h3>
               </div>
             </div>
           </div>
         </div>
+
         <div class="row center-align">
           <div id="promo-container" class="col s8 offset-s2">
+            <div class="promo-flex">
+              <div class="input-field promo-code">
+                <input type="text" name="promoCode">
+                <label class="center" for="promoCode">Promo Code:</label>
+              </div>
+
+              <a class="waves-effect waves-light btn light-green darken-1">Apply</a>
+              </div>
+              <a class="waves-effect waves-light btn light-green darken-1 repair-btn"><i class="material-icons right">insert_invitation</i>Repair Now</a>
+            </div>
+          </div>
+
+          <!-- <div class="col s12 show-on-medium-and-down">
             <div class="promo-flex">
               <div class="input-field promo-code">
                 <input type="text" name="promoCode">
@@ -93,9 +107,7 @@
 
               <a class="waves-effect waves-light btn light-green darken-1">Apply</a>
               </div>
-              <a class="waves-effect waves-light btn light-green darken-1 repair-btn"><i class="material-icons right">insert_invitation</i>Repair Now</a>
-            </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

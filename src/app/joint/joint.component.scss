@@ -1,3 +1,5 @@
+@import "../../_variables.scss";
+
 #joint-header {
   background-image: -webkit-linear-gradient(rgba(57,66,75, .7), rgba(57,66,75, .7)), url('../../assets/img/black-iphone.jpg');
   background-position: center center;
@@ -42,11 +44,21 @@
 .looking-for {
   text-align: center;
   padding: 40px 0;
-  width: 60%;
+  @media (min-width: 426px){
+    width: 60%;
+
+  }
   margin: 0 auto;
 }
 .form-container {
-  width: 50%;
+  @media (min-width: 1024px){
+    width: 50%;
+
+  }
+  @media (min-width: 769px){
+    width: 75%;
+
+  }
   margin: 0 auto;
 }
 
@@ -64,5 +76,41 @@
     color: #555;
     font-size: 300%;
   }
+
+  form {
+    /* label focus color */
+
+    .dropdown-content li > a, .dropdown-content li > span {
+      color: $company-green;
+    }
+    .input-field input[type=text]:focus + label {
+      color: $company-green;
+    }
+    /* label underline focus color */
+    .input-field input[type=text]:focus {
+      border-bottom: 1px solid $company-green;
+      box-shadow: 0 1px 0 0 $company-green;
+    }
+    /* label focus color */
+    .input-field input[type=number]:focus + label {
+      color: $company-green;
+    }
+    /* label underline focus color */
+    .input-field input[type=number]:focus {
+      border-bottom: 1px solid $company-green;
+      box-shadow: 0 1px 0 0 $company-green;
+    }
+    /* label focus color */
+    .input-field input[type=email]:focus + label {
+      color: $company-green;
+    }
+    /* label underline focus color */
+    .input-field input[type=email]:focus {
+      border-bottom: 1px solid $company-green;
+      box-shadow: 0 1px 0 0 $company-green;
+    }
+
+  }
+
 
 }

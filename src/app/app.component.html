@@ -2,33 +2,52 @@
   <nav class="#fafafa grey lighten-5">
     <div class="container">
     <div class="nav-wrapper">
-      <div class="ws-content">
-        <a routerLink="/" class="brand-logo hide-on-med-and-down"><img src="assets/img/main-logo.png"></a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/repair">Repair</a></li>
-          <!-- <li><a routerLink="/"><img src="assets/img/main-logo.png"></a></li> -->
-          <li><a routerLink="/joint">Join Now</a></li>
-          <li><a routerLink="/pricing">Pricing</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
-        </ul>
-        <ul class="center hide-on-med-and-up button-box">
-          <li><a routerLink="/repair" class="waves-effect #7cb342 light-green darken-1 btn">Repair</a></li>
-          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/repair">Repair</a></li>
-          <li><a routerLink="/pricing">Pricing</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
-          <li><a href="#login-modal">Tech Login</a></li>
-        </ul>
 
+      <!-- <a routerLink="/" class="brand-logo hide-on-med-and-down"><img src="assets/img/main-logo.png"></a> -->
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <!-- <ul class="center hide-on-med-and-down">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/repair">Repair</a></li>
+        <li><a routerLink="/"><img src="assets/img/main-logo.png"></a></li>
+        <li><a routerLink="/joint">Join Now</a></li>
+        <li><a routerLink="/pricing">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech Login</a></li>
+      </ul> -->
+      <div class="row hide-on-med-and-down">
+        <div class="col s3 offset-s2 left-items">
+          <ul >
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/repair">Repair</a></li>
+          </ul>
+        </div>
+        <div class="col s2">
+          <a routerLink="/"><img src="assets/img/main-logo.png"></a>
+        </div>
+        <div class="col s3 right-items">
+          <ul>
+            <li><a routerLink="/joint">Join</a></li>
+            <li><a routerLink="/pricing">Pricing</a></li>
+            <li><a href="#login-modal">Tech</a></li>
+          </ul>
+        </div>
       </div>
+      <ul class="center button-box">
+        <li><a routerLink="/repair" class="waves-effect #7cb342 light-green darken-1 btn">Repair</a></li>
+        <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Tech</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/repair">Repair</a></li>
+        <li><a routerLink="/joint">Join</a></li>
+        <li><a routerLink="/pricing">Pricing</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a href="#login-modal">Tech Login</a></li>
+      </ul>
+
     </div>
     </div>
   </nav>
@@ -69,11 +88,20 @@
         </ul>
       </div>
       <div class="col m3 s12 follow">
-        <h3>Follow us</h3>
-        <a href="https://www.facebook.com/pristinewireless/"><i class="ion-social-facebook"></i></a>
-        <a href="https://plus.google.com/+PristineWirelessiDeviceRepairThatComesToYouMiramar"><i class="ion-social-google"></i></a>
-        <a href="https://www.instagram.com/pristinewireless/"><i class="ion-social-instagram"></i></a>
-        <h3>(954) 663-5010 | pristine.wireless@gmail.com</h3>
+        <div class="follow">
+          <h3>Follow us</h3>
+          <a href="https://www.facebook.com/pristinewireless/"><i class="ion-social-facebook"></i></a>
+          <a href="https://plus.google.com/+PristineWirelessiDeviceRepairThatComesToYouMiramar"><i class="ion-social-google"></i></a>
+          <a href="https://www.instagram.com/pristinewireless/"><i class="ion-social-instagram"></i></a>
+        </div>
+        <div class="contact">
+          <ul>
+            <li><a>(954) 663-5010</a></li>
+            <li><a>pristine.wireless@gmail.com</a></li>
+
+          </ul>
+        </div>
+
       </div>
     </div>
     <hr />
@@ -90,7 +118,7 @@
   <h4 class="center-align">Log In</h4>
   <div class="row">
         <div class="row">
-          <form method="post" action="/login" class="col s12">
+          <form action="/login" method="post" class="col s12">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>

@@ -34,7 +34,7 @@ export class RepairComponent implements OnInit {
   selectDateBoolean: boolean = false;
   selectTimeBoolean: boolean = false;
   locationAndContactBoolean: boolean = false;
-  browardCountyBoolean: boolean = true;
+  // browardCountyBoolean: boolean = true;
   miamiCountyBoolean: boolean = true;
   verificationBoolean: boolean = false;
 

@@ -48,7 +48,7 @@ blockquote {
   margin: 50px 0 50px 0;
   text-align: left;
   span {
-    margin-left: 100px;
+    // margin-left: 30%;
     color: #555;
     font-weight: bold;
   }
@@ -65,14 +65,20 @@ blockquote {
 }
 
 .promotion {
+  font-size: 13px;
+  @media (max-width: 600px){
+  }
   i{
     color: #7cb342;
   }
+
 }
 
 .price {
   text-align: right;
-  padding-right: 100px;
+  @media (max-width: 600px){
+    text-align: center;
+  }
   h3 {
     font-size: 200%;
   }
@@ -138,9 +144,26 @@ blockquote {
 #promo-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   .promo-flex {
     display: flex;
     flex-direction: row;
+
+    .input-field label {
+      @media (max-width: 320px){
+        font-size: 0.9rem;
+      }
+    }
+
+    /* label focus color */
+    .input-field input[type=text]:focus + label {
+        color: $company-green;
+      }
+    /* label underline focus color */
+    .input-field input[type=text]:focus {
+       border-bottom: 1px solid $company-green;
+       box-shadow: 0 1px 0 0 $company-green;
+     }
 
     a {
       align-self: center;
@@ -164,7 +187,7 @@ blockquote {
 #issue-modal {
   #issue-container{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
