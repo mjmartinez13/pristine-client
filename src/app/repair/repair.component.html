@@ -218,7 +218,7 @@
   </select>
   <!-- <input class="center" type="dropdown" name="county" [(ngModel)]="county" required /> -->
 </div>
-<div *ngIf="browardCountyBoolean">
+<!-- <div *ngIf="browardCountyBoolean">
   <label for="area">Please Select the closest Area <span class="required">*</span></label>
   <select class="area-select center" name="area" [(ngModel)]="area" required>
 
@@ -228,20 +228,19 @@
     </option>
 
   </select>
-  <!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
-</div>
-<div *ngIf="miamiCountyBoolean">
+</div> -->
+<!-- <div *ngIf="miamiCountyBoolean"> -->
   <label for="area">Please Select the closest Area <span class="required">*</span></label>
   <select class="area-select center" name="area" [(ngModel)]="area" required>
 
-    <option *ngFor="let area of miamiAreas" [value]="area">
+    <option *ngFor="let area of coverageAreas" [value]="area">
       {{area}}
 
     </option>
 
   </select>
   <!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
-</div>
+<!-- </div> -->
 
 </div>
 

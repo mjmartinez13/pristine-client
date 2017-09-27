@@ -35,7 +35,7 @@ export class RepairComponent implements OnInit {
   selectTimeBoolean: boolean = false;
   locationAndContactBoolean: boolean = false;
   // browardCountyBoolean: boolean = true;
-  miamiCountyBoolean: boolean = true;
+  // miamiCountyBoolean: boolean = true;
   verificationBoolean: boolean = false;
 
   currentDate: Date = moment().toDate();
@@ -96,8 +96,9 @@ export class RepairComponent implements OnInit {
   phone: String;
   county: String;
   counties: any;
-  browardAreas: Array<String> = ["Cooper City", "Davie", "Pembroke Pines", "Miramar", "Weston"];
-  miamiAreas: Array<String> = ["Aventura", "Brickell", "Coral Gables", "Doral", "FIU"];
+  // browardAreas: Array<String> = ["Cooper City", "Davie", "Pembroke Pines", "Miramar", "Weston"];
+  // miamiAreas: Array<String> = ["Aventura", "Brickell", "Coral Gables", "Doral", "FIU"];
+  coverageAreas: Array<String> = ["Aventura", "Brickell", "Cooper City", "Coral Gables", "Davie","Doral", "FIU", "Miramar", "Pembroke Pines","Weston"];
   area: String;
 
   //Object variable that will hold all request details to send to api.
