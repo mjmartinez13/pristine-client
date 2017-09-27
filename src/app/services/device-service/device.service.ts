@@ -5,8 +5,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DeviceService {
 
-  //------------ FOR DEVELOPMENT (UNCOMMENT) --------------------
-
+  // ----- UNCOMMENT FOR DEVELOPMENT ------
   // BASE_URL: string ='http://localhost:3000'
   BASE_URL: string ='';
 
