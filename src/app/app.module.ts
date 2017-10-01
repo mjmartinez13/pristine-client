@@ -19,6 +19,9 @@ import { DeviceService } from './services/device-service/device.service';
 
 import { RepairDetailService } from './services/repair-detail-service/repair-detail.service';
 import { MomentModule } from 'angular2-moment';
+import { AffiliateComponent } from './affiliate/affiliate.component';
+import { FaqComponent } from './faq/faq.component';
+import { GuaranteeComponent } from './guarantee/guarantee.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { MomentModule } from 'angular2-moment';
     AboutComponent,
     JointComponent,
     RepairComponent,
-    PricingComponent
+    PricingComponent,
+    AffiliateComponent,
+    FaqComponent,
+    GuaranteeComponent
   ],
   imports: [
     BrowserModule,

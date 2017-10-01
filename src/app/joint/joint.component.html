@@ -79,10 +79,10 @@
         </div>
         <div class="row">
           <div class="input-field col l4 s12">
-            <select>
-              <option value="" disabled selected>Select One</option>
-              <option name ="background" value="1" [(ngModel)]="applicationInfo.background">Yes</option>
-              <option name ="background" value="2" [(ngModel)]="applicationInfo.background">No</option>
+            <select name="background">
+              <option name="background" [value]="0" disabled selected>Select One</option>
+              <option name="background" [value]="yes" [(ngModel)]="applicationInfo.background">Yes</option>
+              <option name="background" [value]="no" [(ngModel)]="applicationInfo.background">No</option>
             </select>
             <label>Would you pass a background check?</label>
           </div>

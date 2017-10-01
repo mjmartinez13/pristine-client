@@ -25,7 +25,14 @@ a {
 
 h2 {
   font-size: 300%;
-  font-weight: 400;
+  // font-weight: 400;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+h1 {
+
 }
 
 .visible {

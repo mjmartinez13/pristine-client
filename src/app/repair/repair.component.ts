@@ -125,6 +125,18 @@ export class RepairComponent implements OnInit {
     });
 
     $('select').material_select();
+
+  }
+
+
+  scrollTop(){
+    var target = $("#progress-bar");
+    if (target.length) {
+      $('html,body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
   }
 
   //Gets the details for one single phone model by id.
@@ -164,6 +176,7 @@ export class RepairComponent implements OnInit {
     });
 
     this.getRepairCost();
+    this.scrollTop();
 
   }
 
@@ -186,6 +199,8 @@ export class RepairComponent implements OnInit {
     .catch((err)=>{
       this.errorMessage = "Could not retrieve  details. Try again later."
     });
+    this.scrollTop();
+
   }
 
   getRepairCost(){
@@ -198,6 +213,8 @@ export class RepairComponent implements OnInit {
     .catch((err)=>{
       this.errorMessage = "Could not retrieve details. Try again later."
     });
+    this.scrollTop();
+
   }
 
   selectDate(selectedRepairType, selectedRepairIndex){
@@ -212,6 +229,8 @@ export class RepairComponent implements OnInit {
     console.log(this.repairCosts);
     this.repairCost = this.repairCosts[selectedRepairIndex];
 
+    this.scrollTop();
+
   }
 
   selectTime(selectedDate){
@@ -223,6 +242,9 @@ export class RepairComponent implements OnInit {
 
     this.requestedDate = selectedDate;
     console.log("Requested date:", this.requestedDate);
+
+    this.scrollTop();
+
   }
 
   provideLocAndCon(selectedTime){
@@ -233,6 +255,9 @@ export class RepairComponent implements OnInit {
     this.locationAndContactBoolean = true;
 
     this.requestedTime = selectedTime;
+
+    this.scrollTop();
+
   }
 
   generateRequestInfo(){

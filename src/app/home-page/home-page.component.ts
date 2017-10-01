@@ -75,6 +75,16 @@ export class HomePageComponent implements OnInit {
     //     });
     //   }
     // }
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true
+    });
+    //Call to function that handles carousel autoplay.
+    autoplay()
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 6500);
+    }
+
+
   }
 }

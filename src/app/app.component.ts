@@ -34,6 +34,42 @@ export class AppComponent {
       }
     );
 
+    $('.collapsible').collapsible();
+
+    $(".collapsible-header").click(toggleIcon);
+
+    function toggleIcon(){
+      if ($(this).hasClass("active") === false){
+        $(this).children("i").text("keyboard_arrow_up");
+      }else {
+        $(this).children("i").text("keyboard_arrow_down");
+      }
+      return;
+    }
+
+    $(".site-top").click(()=>{
+      var target = $("#site-top");
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    });
+
+  //   $(function siteTop() {
+  //   $('a[href*=#]:not([href=#])').click(function() {
+  //     var target = $(this.hash);
+  //     target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+  //     if (target.length) {
+  //       $('html,body').animate({
+  //         scrollTop: target.offset().top
+  //       }, 1000);
+  //       return false;
+  //     }
+  //   });
+  // });
+
 
     $('#login-modal').modal();
     $('#signup-modal').modal();
