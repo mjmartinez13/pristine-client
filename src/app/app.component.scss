@@ -1,5 +1,9 @@
 @import "../_variables.scss";
 
+#site-nav {
+  width: 90%;
+  margin: 0 auto;
+}
 nav {
   img {
     width: 100%;
@@ -7,23 +11,17 @@ nav {
   }
   a {
     color: #555;
-    @media (max-width: 1374px) and (min-width: 1222px){
-      font-size: 12px;
-    }
-    @media (max-width: 1222px) and (min-width: 1668px){
-      font-size: 11px;
-    }
     @media (max-width: 1667px) and (min-width: 1117px){
-      font-size: 10px;
+      font-size: 16px;
     }
     @media (max-width: 1117px) and (min-width: 1066px){
-      font-size: 9px;
+      font-size: 15px;
     }
     @media (max-width: 1065px) and (min-width: 1015px){
-      font-size: 8px;
+      font-size: 13px;
     }
     @media (max-width: 1014px) and (min-width: 992px){
-      font-size: 7.5px;
+      font-size: 13px;
     }
   }
 
@@ -59,6 +57,7 @@ nav {
     }
   }
 }
+
 
 
 footer {

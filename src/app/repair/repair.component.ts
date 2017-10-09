@@ -294,6 +294,7 @@ export class RepairComponent implements OnInit {
     this.area = selectedArea;
 
     this.generateRequestInfo();
+    this.scrollTop();
 
     this.myRepairDetailService.sendDetails(this.requestInfo)
     .then((repairCreated)=>{
@@ -306,8 +307,6 @@ export class RepairComponent implements OnInit {
     console.log ("A pristine specialist will reach out to you shortly!")
   }
 
-  // function County($scope){
-  //   $scope.counties=[{name: "Broward"}, {name: "Miami-Dade"}];
-  // }
+
 
 }

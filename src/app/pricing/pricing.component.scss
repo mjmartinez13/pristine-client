@@ -96,6 +96,19 @@ blockquote {
     font-size: 60px;
     color: #7cb342;
   }
+
+  .hide-on-small-custom {
+    @media (max-width: 600px){
+      display: none;
+    }
+  }
+
+  .show-on-small-custom {
+    display: none;
+    @media (max-width: 600px){
+      display: block;
+    }
+  }
 }
 
 .select-device {
