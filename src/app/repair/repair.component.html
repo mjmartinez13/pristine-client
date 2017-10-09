@@ -1,33 +1,388 @@
-<div class="container">
-  <div class="valign-wrapper" id="progress-bar">
-    <div class="valign">
-      <div class="line"></div>
-      <div class="row">
-        <div class="col s4 center-align">
-          <p class="active">1</p>
-          <h5>Your Device</h5>
+<section id="repair-top">
+  <div class="container" *ngIf="requestBarBoolean">
+    <div class="valign-wrapper" id="progress-bar">
+      <div class="valign">
+        <div class="line hide-on-small-only"></div>
+        <div class="row">
+          <div class="col s4 center-align">
+            <p id="step-1" class="active">1</p>
+            <h5>Your Device</h5>
+            <div>
+              <strong><span id="request-info">{{ deviceName }} </span></strong>
+              <strong><span id="request-info">{{ model }}</span></strong>
+              <strong><span id="request-info">{{ color }} </span></strong>
+
+            </div>
+          </div>
+          <div class="col s4 center-align">
+            <p id="step-2">2</p>
+            <h5>The Repair</h5>
+            <div>
+              <strong><span id="request-info">{{ repairType }} </span></strong>
+              Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
+
+            </div>
+          </div>
+          <div class="col s4 center-align">
+            <p id="step-3">3</p>
+            <h5>Tell Us When</h5>
+            <div>
+              <strong><span id="request-info">{{ requestedDate | date : "MMM d," }} {{ requestedTime }} </span></strong>
+            </div>
+          </div>
         </div>
-        <div class="col s4 center-align">
-          <p>2</p>
-          <h5>Issue</h5>
+        <div class="progress">
+          <div class="determinate" style="width: 16%"></div>
         </div>
-        <div class="col s4 center-align">
-          <p>3</p>
-          <h5>Tell Us When</h5>
-        </div>
-      </div>
-      <div class="progress">
-        <div class="determinate" style="width: 16%"></div>
       </div>
     </div>
   </div>
+
+
+  <section id="repair-header">
+    <div class="container">
+
+      <div id="select-device-container" *ngIf="selectModelBoolean">
+        <h2 class="center-align">Select Your Device</h2>
+        <hr>
+
+        <div class="row">
+          <div class="col s8 offset-s2 center-align">
+            <div id="devices-container">
+              <div class="select-device" *ngFor="let oneDevice of devices">
+                <div (click)="getColors(oneDevice._id, oneDevice.model)">
+                  <img src="http://i.imgur.com/nU9LZot.png" />
+                  <br />
+                  <span> {{ oneDevice.model }} </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="select-color-container" *ngIf="selectColorBoolean">
+        <h2 class="center-align">Select Your Color </h2>
+        <hr>
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div id="colors-container">
+              <div class="selection-list" *ngFor="let oneColor of colors">
+                <button *ngIf="oneColor === 'Gold'" class="gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Silver'" class="silver" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Rose Gold'" class="rose-gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Black'" class="black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Jet Black'" class="jet-black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Space Gray'" class="space-gray" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'White'" class="white" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Blue'" class="blue" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Green'" class="green" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Pink'" class="pink" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+                <button *ngIf="oneColor === 'Yellow'" class="yellow" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="select-repair-container" *ngIf="selectRepairBoolean">
+        <h2 class="center-align"> Select Your Repair </h2>
+        <hr>
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div id="issues-container">
+              <div class="selection-list" *ngFor="let oneRepairType of repairTypes; let i=index">
+                <button class="repair-item center-align" data-index="i" (click)="selectDate(oneRepairType, i)">
+                  <span> {{oneRepairType}} </span>
+                </button>
+              </div>
+
+            </div>
+            <div>
+              <!-- <span *ngFor="let oneCost of repairCosts.repairCost"> {{oneCost}</span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="select-date-container" *ngIf="selectDateBoolean">
+        <h2 class="center-align"> Select Repair Date </h2>
+        <hr>
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div id="dates-container">
+              <div class="selection-list" *ngFor="let oneDate of availableDays">
+                <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
+                <button (click)="selectTime(oneDate)">
+                  {{oneDate | date : "EEEE"}}
+                  <br />
+                  {{oneDate | date : "MMM d"}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="select-time-container" *ngIf="selectTimeBoolean">
+        <h2 class="center-align"> Select a Time </h2>
+        <hr>
+        <div class="row">
+          <div class="col l8 m8 s8 offset-l2 offset-m2">
+            <div id="times-container">
+              <div class="selection-list" *ngFor="let oneTime of availableTimes">
+
+                <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
+
+              </div> -->
+              <button (click)="provideLocAndCon(oneTime)">
+                <span> {{oneTime}} </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="locationAndContactBoolean">
+      <div class="row">
+        <div class="col m8 s12 offset-m2 center-align">
+          <div class="row">
+            <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
+
+              <div class="contact-form">
+                <h2>Almost Done!</h2>
+                <h5>Tell us how to reach you...</h5>
+                <div>
+                  <label for="name">Name <span class="required">*</span></label>
+                  <input class="center" placeholder="Your Name *"type="text" name="name" [(ngModel)]="name" required />
+                </div>
+                <div>
+                  <label for="email">Email <span class="required">*</span></label>
+                  <input class="center" placeholder="Your Email*" type="text" name="email" [(ngModel)]="email" required />
+                </div>
+                <div>
+                  <label for="phone">Phone <span class="required">*</span></label>
+                  <input class="center" placeholder="Your Phone*" type="text" name="phone" [(ngModel)]="phone" required />
+                </div>
+              </div>
+              <div class="location-form center-align">
+                <!-- <h2>Location </h2> -->
+                <div>
+
+                  <!-- <div class="input-field col s12">
+                  <select>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+              </div> -->
+
+
+
+
+
+              <!-- <label for="nike"> County *</label>
+              <select name="nike" id="nike" ng-model="nike" ng-options="let county of counties">
+            </select> -->
+
+            <!-- <div *ngFor="let county of counties">
+            {{county}}
+
+          </div> -->
+
+
+
+          <!-- <select *ngIf="ng-county === 'Broward'">
+          <option *ngFor="let area of browardAreas" value= {{area}} [(ngModel)]="area">
+          {{area}}
+        </option>
+      </select>
+
+      <select *ngIf="ng-county === 'Miami-Dade'">
+      <option *ngFor="let area of miamiAreas" value= {{area}} [(ngModel)]="area">
+      {{area}}
+    </option>
+  </select> -->
+
+  <label for="county">Please Select the County <span class="required">*</span></label>
+  <select class="county-select center-align" name="county" placeholder="Select County" [(ngModel)]="county" required>
+    <option class="center"*ngFor="let county of counties" [value]="county.name">
+      {{county.name}}
+
+    </option>
+
+  </select>
+  <!-- <input class="center" type="dropdown" name="county" [(ngModel)]="county" required /> -->
+</div>
+<!-- <div *ngIf="browardCountyBoolean">
+<label for="area">Please Select the closest Area <span class="required">*</span></label>
+<select class="area-select center" name="area" [(ngModel)]="area" required>
+
+<option *ngFor="let area of browardAreas" [value]="area">
+{{area}}
+
+</option>
+
+</select>
+</div> -->
+<!-- <div *ngIf="miamiCountyBoolean"> -->
+<label for="area">Please Select the closest Area <span class="required">*</span></label>
+<select class="area-select center" name="area" [(ngModel)]="area" required>
+
+  <option *ngFor="let area of coverageAreas" [value]="area">
+    {{area}}
+
+  </option>
+
+</select>
+<!-- <input class="center" type="dropdown" name="area" [(ngModel)]="area" required /> -->
+<!-- </div> -->
+
 </div>
 
 
-<section id="repair-header">
-  <div class="container">
-    <h2 class="center-align">Selecting your device that needs repairing</h2>
-    <hr>
+<button class="submit-request-button" type="submit"> Submit Request </button>
+</form>
+</div>
 
+</div>
+</div>
+</div>
+
+<section>
+
+  <div *ngIf="verificationBoolean">
+    <div class="row">
+      <div id="confirmation-info" class="col s12">
+
+        <div>
+          <h2 class="center-align"> Thank for your request. </h2>
+          <h2 class="center-align">Your repair request was registered on {{ currentDate | date : "MMM d, yyyy hh:mm"}}</h2>
+
+          <div class="center-align">
+            <img src="../assets/img/city.png" />
+          </div>
+        </div>
+        <div class="row">
+          <div id="next-steps" class="col s12">
+            <h2 class="center-align">What happens next?</h2>
+            <div>
+              <div class="row center">
+                <div class="col m4 s12">
+                  <i class="material-icons">message</i>
+                  <p>
+                    You will receive an email confirmation as well as a text
+                    to the number you have provided.
+                  </p>
+                </div>
+                <div class="col m4 s12">
+                  <i class="material-icons">business</i>
+                  <p>
+                    A Pristine Specialist will repair your device at the time
+                    and location you requested.
+                  </p>
+                </div>
+                <div class="col m4 s12">
+                  <i class="material-icons">local_atm</i>
+                  <p>
+                    Payment will be collected via one of our approved payment
+                    methods upon completion of the repair.
+                  </p>
+
+                </div>
+              </div>
+        <div class="repair-info">
+          <div class="row">
+            <h2 class="center">Repair Info</h2>
+            <div class="col s12">
+              <div class="row">
+                <div class="col s3">
+                  Device:
+                </div>
+                <div class="col s9">
+                  <span> {{ device }} {{ model }}, {{ color }} </span>
+                </div>
+                <hr />
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  Issue:
+                </div>
+                <div class="col s9">
+                  <span> {{ repairType }} </span>
+                  <span *ngIf="repairType === 'Screen'"> (Tempered Glass Screen Protector Included)</span>
+                </div>
+                <hr />
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  Cost:
+                  <br />
+                </div>
+                <div class="col s9">
+                  <span> ${{ repairCost }} </span>
+                  <br />
+                  (Pay for repair once completed)
+                </div>
+                <hr />
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  Expect us at:
+                </div>
+                <div class="col s9">
+                  <span> {{ requestedTime }} </span>
+                </div>
+                <hr />
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  Your info:
+                </div>
+                <div class="col s9">
+                  <p>
+                    {{ name }}
+                  </p>
+                  <p>
+                    {{ county }}, {{ area }}
+                  </p>
+                  <p>
+                    {{ email }}
+                  </p>
+                  <p>
+                    {{ phone }}
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+        </div>
+
+
+    </div>
+    <hr />
+    <h2 class="center-align">Any questions or concerns?</h2>
+    <h5 class="center-align">Call Us:<br />(954) 633-5010</h5>
+    <h5 class="center-align">Email Us:<br /> pristine.wireless@gmail.com</h5>
   </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+</div>
+</section>
+
 </section>

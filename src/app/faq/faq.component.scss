@@ -1,0 +1,67 @@
+@import "../../_variables.scss";
+
+#faq {
+
+  @media (max-width: 1024px){
+    font-size: 15px;
+  }
+  @media (max-width: 425px){
+    font-size: 13px;
+    // .container {
+    //
+    // }
+  }
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    color: $company-green;
+  }
+  h5, i{
+    color: #555;
+  }
+
+  i{
+    position: absolute;
+    left: 17px;
+  }
+
+
+  .collapsible {
+    box-shadow: none;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+
+    .active {
+      border-color: $company-green;
+      border-right: 2px solid $company-green;
+    }
+
+    h5 {
+      margin: .82rem 0 1.656rem 0;
+    }
+
+    .collapsible-header {
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid #ddd;
+      margin-top: 10px;
+      position: relative;
+      padding-left: 57px;
+    }
+
+    .collapsible-body {
+      border-bottom: none;
+      border-left: 2px solid $company-green;
+      padding-left: 57px;
+    }
+  }
+  .collapsible-header.active {
+    border-left: 2px solid $company-green !important;
+    // border-color: $company-green !important;
+    // margin-top: 10px;
+    color: $company-green;
+  }
+
+}

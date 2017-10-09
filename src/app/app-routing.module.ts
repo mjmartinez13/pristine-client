@@ -10,6 +10,14 @@ import { JointComponent } from './joint/joint.component';
 
 import { RepairComponent } from './repair/repair.component';
 
+import { PricingComponent } from './pricing/pricing.component';
+
+import { AffiliateComponent } from './affiliate/affiliate.component';
+
+import { FaqComponent } from './faq/faq.component';
+
+import { GuaranteeComponent } from './guarantee/guarantee.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +34,22 @@ const routes: Routes = [
   {
     path: 'repair',
     component: RepairComponent
+  },
+  {
+    path: 'pricing',
+    component: PricingComponent
+  },
+  {
+    path: 'affiliate',
+    component: AffiliateComponent
+  },
+  {
+    path: 'faq',
+    component: FaqComponent
+  },
+  {
+    path: 'guarantee',
+    component: GuaranteeComponent
   }
 
 ];

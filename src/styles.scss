@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
 * {
   padding: 0;
   margin: 0;
@@ -13,6 +15,7 @@ html {
 body {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 
@@ -22,9 +25,58 @@ a {
 
 h2 {
   font-size: 300%;
-  font-weight: 400;
+  // font-weight: 400;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+h1 {
+
 }
 
 .visible {
   opacity: 1;
 }
+
+:root {
+  --logo-blue: #11ABD8;
+  --logo-green: #89C23E;
+  --gold: #ECDDCB;
+  --silver: #E9EBEA;
+  --rose-gold: #E9CEC7;
+  --jet-black: #000;
+  --space-gray: #242B30;
+  --white: #E9EBEA;
+  --black: #000;
+  --blue: #4CBDE7;
+  --green: #A2EF70;
+  --pink: #FC6D6D;
+  --yellow: #FFFF82;
+}
+
+
+.colorful {
+	background:
+		-webkit-linear-gradient(45deg, hsla(200, 98%, 50%, 1) 0%, hsla(200, 98%, 50%, 0) 70%),
+		-webkit-linear-gradient(315deg, hsla(90, 96%, 49%, 1) 10%, hsla(90, 96%, 49%, 0) 80%),
+		-webkit-linear-gradient(225deg, hsla(197, 27%, 53%, 1) 10%, hsla(197, 27%, 53%, 0) 80%),
+		-webkit-linear-gradient(135deg, hsla(242, 99%, 42%, 1) 100%, hsla(242, 99%, 42%, 0) 70%);
+	background:
+		linear-gradient(45deg, hsla(200, 98%, 50%, 1) 0%, hsla(200, 98%, 50%, 0) 70%),
+		linear-gradient(135deg, hsla(90, 96%, 49%, 1) 10%, hsla(90, 96%, 49%, 0) 80%),
+		linear-gradient(225deg, hsla(197, 27%, 53%, 1) 10%, hsla(197, 27%, 53%, 0) 80%),
+		linear-gradient(315deg, hsla(242, 99%, 42%, 1) 100%, hsla(242, 99%, 42%, 0) 70%);
+	}
+
+  .carousel .indicators .indicator-item {
+    background-color: #ddd !important;
+  }
+
+  .carousel .indicators .indicator-item.active {
+    background-color: #555 !important;
+  }
+
+  .carousel.carousel-slider .carousel-fixed-item.with-indicators {
+    bottom: 60px !important;
+  }

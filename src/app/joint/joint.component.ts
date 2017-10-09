@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicantService } from '../services/applicant-service/applicant.service';
+
 declare var jQuery: any;
 declare var $: any;
+
 @Component({
   selector: 'app-joint',
   templateUrl: './joint.component.html',
@@ -8,7 +11,13 @@ declare var $: any;
 })
 export class JointComponent implements OnInit {
 
-  constructor() { }
+  errorMessage: String;
+
+  appSubmitted: Boolean = false;
+
+  applicationInfo: Object = {};
+
+  constructor(private myApplicantService: ApplicantService) { }
 
   ngOnInit() {
 
@@ -31,23 +40,35 @@ export class JointComponent implements OnInit {
 
 
     $(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
   }
 
-  apply() {
-    $('#apply-section').show(100);
+  submitApplication(){
+
+
+    console.log(this.applicationInfo);
+
+    this.myApplicantService.sendApplication(this.applicationInfo)
+    .then((applicationCreated)=>{
+      this.appSubmitted = true;
+      console.log(applicationCreated);
+    })
+    .catch((err)=>{
+      this.errorMessage = "Could not submit application. Try again later."
+    });
   }
+
 
 }
